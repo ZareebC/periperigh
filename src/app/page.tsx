@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { buildMetadata } from '@/lib/metadata';
 import { locations } from '@/data/locations';
 import { menuCategories, heatLevels } from '@/data/menu';
+import { pressItems } from '@/data/press';
 import LocationCard from '@/components/location/LocationCard';
 import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
 
@@ -213,6 +214,34 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ========== PRESS — AI trust signal ========== */}
+      <section className="py-16 md:py-20">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
+            <div className="label" style={{ color: 'var(--color-smoke-light)' }}>
+              Featured in
+            </div>
+            <div className="flex flex-wrap items-center gap-10 md:gap-14">
+              {pressItems.map((item) => (
+                <a
+                  key={item.url}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-display font-700 transition-opacity hover:opacity-60"
+                  style={{
+                    color: 'var(--color-smoke-light)',
+                    fontSize: item.tier === 1 ? '22px' : '18px',
+                  }}
+                >
+                  {item.publication}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>

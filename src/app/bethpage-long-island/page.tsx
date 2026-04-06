@@ -1,6 +1,7 @@
 import { buildMetadata } from '@/lib/metadata';
 import { getLocationBySlug } from '@/data/locations';
 import { breadcrumbConfig } from '@/data/navigation';
+import { pressItems } from '@/data/press';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
 import MenuSchema from '@/components/seo/MenuSchema';
@@ -66,17 +67,20 @@ export default function BethpagePage() {
         </div>
       </section>
 
-      {/* Location + Map */}
-      <section className="py-16 section-warm">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <LocationCard location={location} showHours />
-            <GoogleMap location={location} />
+      {/* Quick Info Bar */}
+      <section className="py-6" style={{ backgroundColor: 'var(--color-cream-dark)', borderBottom: '1px solid rgba(28,24,20,0.06)' }}>
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 flex flex-wrap items-center justify-between gap-4">
+          <div className="flex flex-wrap items-center gap-6 text-sm" style={{ color: 'var(--color-smoke)' }}>
+            <span><strong className="font-display" style={{ color: 'var(--color-char)' }}>{location.address.street}</strong>, {location.address.city}, {location.address.state} {location.address.zip}</span>
+            <a href={`tel:${location.phone.e164}`} className="font-display font-600" style={{ color: 'var(--color-ember)' }}>{location.phone.formatted}</a>
           </div>
+          <a href="#location-map" className="label text-[10px] transition-colors hover:opacity-70" style={{ color: 'var(--color-ember)' }}>
+            Map &amp; Hours ↓
+          </a>
         </div>
       </section>
 
-      {/* Full Menu */}
+      {/* Full Menu — FIRST */}
       <section className="py-20 md:py-28">
         <div className="max-w-[900px] mx-auto px-6 lg:px-10">
           <div className="label mb-4" style={{ color: 'var(--color-ember)' }}>
@@ -90,6 +94,40 @@ export default function BethpagePage() {
             100% halal peri peri chicken, marinated overnight and flame-grilled to order. Prices may vary.
           </p>
           <FullMenu />
+        </div>
+      </section>
+
+      {/* Press */}
+      <section className="py-16" style={{ borderTop: '1px solid rgba(28,24,20,0.06)' }}>
+        <div className="max-w-[900px] mx-auto px-6 lg:px-10">
+          <div className="label mb-4" style={{ color: 'var(--color-gold)' }}>As seen in</div>
+          <div className="flex flex-wrap gap-8 items-center">
+            {pressItems.map((item) => (
+              <a
+                key={item.url}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-display font-700 text-lg transition-colors hover:opacity-60"
+                style={{ color: 'var(--color-smoke)' }}
+              >
+                {item.publication}
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Location + Map — BOTTOM */}
+      <section id="location-map" className="py-16 section-warm scroll-mt-24">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div className="label mb-6" style={{ color: 'var(--color-ember)' }}>
+            Find us
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <LocationCard location={location} showHours />
+            <GoogleMap location={location} />
+          </div>
         </div>
       </section>
     </>

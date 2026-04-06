@@ -1,6 +1,7 @@
 import JsonLd from './JsonLd';
 import { siteConfig } from '@/data/siteConfig';
 import { locations } from '@/data/locations';
+import { pressItems } from '@/data/press';
 
 export default function RestaurantSchema() {
   const schema = {
@@ -19,6 +20,7 @@ export default function RestaurantSchema() {
       siteConfig.social.instagram,
       siteConfig.social.facebook,
       siteConfig.social.tiktok,
+      ...pressItems.map((item) => item.url),
     ],
     hasMenu: `${siteConfig.domain}/brooklyn-bed-stuy`,
     acceptsReservations: false,

@@ -77,11 +77,11 @@ export const locations: Location[] = [
     orderLinks: [
       {
         platform: 'UberEats',
-        url: 'https://www.ubereats.com/store/peri-peri-grill-house-brooklyn/xGKzL7iqT5O_tFqHlZKv7w',
+        url: 'https://www.ubereats.com/store/peri-peri-grill-house/6cdV3ZZVRyC3-JW9D9k28A',
       },
       {
         platform: 'DoorDash',
-        url: 'https://www.doordash.com/store/peri-peri-grill-house-brooklyn-2940582/',
+        url: 'https://www.doordash.com/store/peri-peri-grill-house-brooklyn-313027/',
       },
     ],
     metaDescription:
@@ -127,11 +127,11 @@ export const locations: Location[] = [
     orderLinks: [
       {
         platform: 'UberEats',
-        url: 'https://www.ubereats.com/store/peri-peri-grill-house-bethpage/',
+        url: 'https://www.ubereats.com/store/peri-peri-grill-house/6cdV3ZZVRyC3-JW9D9k28A',
       },
       {
         platform: 'DoorDash',
-        url: 'https://www.doordash.com/store/peri-peri-grill-house-bethpage/',
+        url: 'https://www.doordash.com/store/peri-peri-grill-house-brooklyn-313027/',
       },
     ],
     metaDescription:
