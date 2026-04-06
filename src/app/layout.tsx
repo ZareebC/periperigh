@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Syne, Source_Serif_4, JetBrains_Mono } from 'next/font/google';
+import { Syne, Source_Serif_4, JetBrains_Mono, Archivo_Black } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -21,6 +21,13 @@ const sourceSerif = Source_Serif_4({
   display: 'swap',
   weight: ['400', '500', '600'],
   style: ['normal', 'italic'],
+});
+
+const heroFont = Archivo_Black({
+  subsets: ['latin'],
+  variable: '--font-hero',
+  display: 'swap',
+  weight: '400',
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -45,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${syne.variable} ${sourceSerif.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${syne.variable} ${sourceSerif.variable} ${heroFont.variable} ${jetbrainsMono.variable}`}>
       <body>
         <GoogleAnalytics />
         <AIReferrerTracker />

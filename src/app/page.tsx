@@ -45,8 +45,8 @@ export default function HomePage() {
                 Brooklyn &middot; Long Island &middot; 100% Halal
               </div>
               <h1
-                className="font-display font-800 tracking-[-0.03em] leading-[0.95]"
-                style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}
+                className="uppercase leading-[0.9]"
+                style={{ fontFamily: 'var(--font-hero)', fontWeight: 400, letterSpacing: '-0.02em', fontSize: 'clamp(2.8rem, 6.5vw, 5rem)' }}
               >
                 Flame-grilled.
                 <br />
