@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { mainNav } from '@/data/navigation';
 import MobileNav from './MobileNav';
 
@@ -7,15 +8,21 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b" style={{ backgroundColor: 'var(--color-cream)', borderColor: 'rgba(28,24,20,0.08)' }}>
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="flex items-center justify-between h-[72px]">
-          {/* Logo — distinctive type treatment */}
-          <Link href="/" className="flex items-center gap-3 group">
-            {/* Ember dot */}
-            <div className="w-3 h-3 rounded-full" style={{ backgroundColor: 'var(--color-ember)' }} />
-            <div className="font-display">
-              <span className="text-[22px] font-800 tracking-tight" style={{ color: 'var(--color-char)' }}>
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2.5 group">
+            <Image
+              src="/images/logo.png"
+              alt="Peri Peri Grill House"
+              width={44}
+              height={44}
+              className="w-10 h-10 md:w-11 md:h-11 object-contain"
+              priority
+            />
+            <div className="font-display hidden sm:block">
+              <span className="text-[20px] font-800 tracking-tight" style={{ color: 'var(--color-char)' }}>
                 PERI PERI
               </span>
-              <span className="text-[22px] font-400 tracking-tight ml-1.5" style={{ color: 'var(--color-smoke)' }}>
+              <span className="text-[20px] font-400 tracking-tight ml-1.5" style={{ color: 'var(--color-smoke)' }}>
                 Grill House
               </span>
             </div>

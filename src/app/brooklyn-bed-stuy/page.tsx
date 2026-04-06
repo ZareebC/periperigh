@@ -41,7 +41,7 @@ export default function BrooklynPage() {
           className="absolute bottom-0 left-0 right-0 h-px"
           style={{ background: 'linear-gradient(90deg, transparent, var(--color-ember), transparent)' }}
         />
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-20 md:py-28">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-14 md:py-18">
           <div className="label mb-4" style={{ color: 'var(--color-gold)' }}>
             Brooklyn &middot; Bed-Stuy
           </div>

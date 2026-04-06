@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { locations } from '@/data/locations';
 import { siteConfig } from '@/data/siteConfig';
 
@@ -10,7 +11,13 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: 'var(--color-ember)' }} />
+              <Image
+                src="/images/logo.png"
+                alt="Peri Peri Grill House"
+                width={36}
+                height={36}
+                className="w-9 h-9 object-contain"
+              />
               <span className="font-display font-800 text-lg tracking-tight" style={{ color: 'var(--color-cream)' }}>
                 PERI PERI
               </span>

@@ -37,7 +37,7 @@ export default function HomePage() {
           style={{ background: 'linear-gradient(90deg, transparent, var(--color-ember), transparent)' }}
         />
 
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 md:py-32 lg:py-40">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-16 md:py-20 lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
             {/* Main headline — offset left */}
             <div className="lg:col-span-8">
