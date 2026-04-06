@@ -12,7 +12,7 @@ const bethpage = getLocationBySlug('bethpage-long-island')!;
 export const metadata = buildMetadata({
   title: 'Halal Chicken Near Hicksville, NY — Peri Peri Grill House',
   description:
-    'Looking for halal peri peri chicken near Hicksville, NY? Peri Peri Grill House in Bethpage is just minutes away. Flame-grilled, marinated overnight, 100% halal. Dine in, takeout, or delivery.',
+    'Looking for halal peri peri chicken near Hicksville, NY? Peri Peri Grill House in Bethpage is just minutes away. Flame-grilled, marinated overnight, 100% halal.',
   path: '/hicksville-halal-chicken',
   geo: {
     region: 'US-NY',
@@ -31,12 +31,24 @@ export default function HicksvillePage() {
       <Breadcrumbs items={breadcrumbConfig['/hicksville-halal-chicken']} />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-gray-950 to-red-950 text-white py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-            Halal Chicken Near <span className="text-red-400">Hicksville, NY</span>
+      <section className="section-dark relative overflow-hidden">
+        <div
+          className="absolute bottom-0 left-0 right-0 h-px"
+          style={{ background: 'linear-gradient(90deg, transparent, var(--color-ember), transparent)' }}
+        />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-20 md:py-28">
+          <div className="label mb-4" style={{ color: 'var(--color-gold)' }}>
+            Nassau County &middot; Long Island
+          </div>
+          <h1
+            className="font-display font-800 tracking-[-0.03em] leading-[0.95]"
+            style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
+          >
+            Halal Chicken Near
+            <br />
+            <span style={{ color: 'var(--color-ember)' }}>Hicksville, NY</span>
           </h1>
-          <p className="mt-4 text-lg text-gray-300 max-w-2xl">
+          <p className="mt-6 text-lg max-w-2xl" style={{ color: 'var(--color-smoke-light)' }}>
             Craving real flame-grilled peri peri chicken? Peri Peri Grill House in Bethpage is just
             minutes from Hicksville — serving 100% halal chicken marinated overnight in African
             Bird&apos;s Eye chili and grilled to order.
@@ -44,13 +56,13 @@ export default function HicksvillePage() {
         </div>
       </section>
 
-      {/* Content — rich text for AI */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+      {/* Content */}
+      <section className="py-20 md:py-28">
+        <div className="max-w-[800px] mx-auto px-6 lg:px-10">
+          <h2 className="font-display font-800 text-3xl mb-6">
             The Best Halal Peri Peri Chicken Near Hicksville
           </h2>
-          <div className="prose prose-lg max-w-none text-gray-600">
+          <div className="space-y-5 text-lg leading-relaxed" style={{ color: 'var(--color-smoke)' }}>
             <p>
               If you live in Hicksville, Farmingdale, Massapequa, Levittown, or anywhere in Nassau
               County and you&apos;re looking for authentic halal peri peri chicken, Peri Peri Grill House
@@ -67,9 +79,7 @@ export default function HicksvillePage() {
             <p>
               Every piece of our chicken is marinated overnight in our house-made peri peri spice
               blend, then grilled to order over an open flame. We offer seven heat levels, from
-              Plain-ish (zero heat, all flavor) to Extra Hot (for those who like to sweat). Whether
-              you&apos;re feeding the family with our whole chicken platters or grabbing a quick chicken
-              breast sandwich on your lunch break, we&apos;ve got you covered.
+              Plain-ish (zero heat, all flavor) to Extra Hot (for those who like to sweat).
             </p>
             <p>
               We also serve smash burgers, falafel wraps, loaded fries, hand-crafted milkshakes
@@ -78,34 +88,35 @@ export default function HicksvillePage() {
             </p>
           </div>
 
-          {/* Popular Items Preview */}
-          <h3 className="text-2xl font-bold text-gray-900 mt-12 mb-6">Popular Menu Items</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* Popular Items */}
+          <h3 className="font-display font-700 text-2xl mt-14 mb-6">Popular Menu Items</h3>
+          <div className="space-y-0">
             {chickenItems.map((item) => (
-              <div key={item.name} className="bg-gray-50 rounded-xl p-5 border border-gray-100">
-                <h4 className="font-semibold text-gray-900">{item.name}</h4>
-                <p className="text-sm text-gray-500 mt-1">{item.description}</p>
-                <p className="text-red-600 font-bold mt-2">
+              <div
+                key={item.name}
+                className="py-5 flex justify-between gap-6"
+                style={{ borderBottom: '1px solid rgba(28,24,20,0.06)' }}
+              >
+                <div>
+                  <h4 className="font-display font-600">{item.name}</h4>
+                  <p className="text-sm mt-1" style={{ color: 'var(--color-smoke)' }}>{item.description}</p>
+                </div>
+                <span className="font-display font-700 flex-shrink-0" style={{ color: 'var(--color-ember)' }}>
                   ${typeof item.price === 'number' ? item.price.toFixed(2) : item.price}
-                </p>
+                </span>
               </div>
             ))}
           </div>
-          <div className="mt-6">
-            <Link
-              href="/bethpage-long-island"
-              className="inline-flex items-center px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors"
-            >
-              View Full Bethpage Menu
-            </Link>
+          <div className="mt-8">
+            <Link href="/bethpage-long-island" className="btn-ember">View Full Bethpage Menu</Link>
           </div>
         </div>
       </section>
 
-      {/* Location Card */}
-      <section className="py-12 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Visit Us — Minutes from Hicksville</h2>
+      {/* Location */}
+      <section className="py-16 section-warm">
+        <div className="max-w-[900px] mx-auto px-6 lg:px-10">
+          <h2 className="font-display font-700 text-2xl mb-6">Visit Us — Minutes from Hicksville</h2>
           <LocationCard location={bethpage} showHours showMap />
         </div>
       </section>

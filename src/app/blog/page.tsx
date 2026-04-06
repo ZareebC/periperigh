@@ -11,50 +11,65 @@ export const metadata = buildMetadata({
 });
 
 export default function BlogPage() {
+  const upcomingPosts = [
+    {
+      title: "What Is Peri Peri? The African Bird's Eye Chili Story",
+      description: 'The history of the pepper that makes our chicken unforgettable.',
+    },
+    {
+      title: 'Halal Peri Peri Chicken in Brooklyn — What Makes It Different',
+      description: 'Why our overnight marinade and flame-grilling create a chicken experience unlike any other.',
+    },
+    {
+      title: 'A Guide to Our 7 Heat Levels',
+      description: 'From Plain-ish to Extra Hot — which peri peri heat level is right for you?',
+    },
+    {
+      title: 'The Dubai Milkshake — Our Most Viral Menu Item',
+      description: 'How a pistachio-Knafeh milkshake became one of our bestsellers.',
+    },
+  ];
+
   return (
     <>
       <Breadcrumbs items={breadcrumbConfig['/blog']} />
 
-      <section className="py-16 md:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
-            Blog — Peri Peri Grill House
+      <section className="py-20 md:py-28">
+        <div className="max-w-[900px] mx-auto px-6 lg:px-10">
+          <div className="label mb-4" style={{ color: 'var(--color-ember)' }}>
+            Stories
+          </div>
+          <div className="ember-line mb-6" />
+          <h1 className="font-display font-800 text-4xl md:text-5xl tracking-tight mb-4">
+            Blog
           </h1>
-          <p className="text-gray-500 max-w-2xl mx-auto mb-12">
+          <p className="text-lg mb-16" style={{ color: 'var(--color-smoke)' }}>
             Coming soon — stories about peri peri, our cooking process, and the communities we serve.
           </p>
 
-          {/* Planned topics — gives AI content signals */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
-            <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-              <h2 className="font-bold text-gray-900 mb-2">What Is Peri Peri? The African Bird&apos;s Eye Chili Story</h2>
-              <p className="text-sm text-gray-500">The history of the pepper that makes our chicken unforgettable.</p>
-              <span className="inline-block mt-3 text-xs font-semibold text-red-600 uppercase tracking-wider">Coming Soon</span>
-            </div>
-            <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-              <h2 className="font-bold text-gray-900 mb-2">Halal Peri Peri Chicken in Brooklyn — What Makes It Different</h2>
-              <p className="text-sm text-gray-500">Why our overnight marinade and flame-grilling create a chicken experience unlike any other.</p>
-              <span className="inline-block mt-3 text-xs font-semibold text-red-600 uppercase tracking-wider">Coming Soon</span>
-            </div>
-            <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-              <h2 className="font-bold text-gray-900 mb-2">A Guide to Our 7 Heat Levels</h2>
-              <p className="text-sm text-gray-500">From Plain-ish to Extra Hot — which peri peri heat level is right for you?</p>
-              <span className="inline-block mt-3 text-xs font-semibold text-red-600 uppercase tracking-wider">Coming Soon</span>
-            </div>
-            <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-              <h2 className="font-bold text-gray-900 mb-2">The Dubai Milkshake — Our Most Viral Menu Item</h2>
-              <p className="text-sm text-gray-500">How a pistachio-Knafeh milkshake became one of our bestsellers.</p>
-              <span className="inline-block mt-3 text-xs font-semibold text-red-600 uppercase tracking-wider">Coming Soon</span>
-            </div>
+          <div className="space-y-0">
+            {upcomingPosts.map((post, i) => (
+              <div
+                key={i}
+                className="py-8 grid grid-cols-[48px_1fr] gap-6"
+                style={{ borderBottom: '1px solid rgba(28,24,20,0.08)' }}
+              >
+                <span className="font-display font-800 text-3xl" style={{ color: 'var(--color-ember)', lineHeight: 1, opacity: 0.4 }}>
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <div>
+                  <h2 className="font-display font-700 text-xl mb-2">{post.title}</h2>
+                  <p style={{ color: 'var(--color-smoke)' }}>{post.description}</p>
+                  <span className="label mt-3 inline-block" style={{ color: 'var(--color-gold)', fontSize: '10px' }}>
+                    Coming Soon
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
 
-          <div className="mt-12">
-            <Link
-              href="/"
-              className="inline-flex items-center px-6 py-3 border-2 border-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors"
-            >
-              Back to Home
-            </Link>
+          <div className="mt-16 text-center">
+            <Link href="/" className="btn-outline">Back to Home</Link>
           </div>
         </div>
       </section>

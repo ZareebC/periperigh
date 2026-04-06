@@ -17,69 +17,115 @@ export default function AboutChickenPage() {
       <Breadcrumbs items={breadcrumbConfig['/halal-peri-peri-chicken']} />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-gray-950 to-red-950 text-white py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-            Halal Peri Peri Chicken — <span className="text-red-400">From Southeast Africa to Your Plate</span>
+      <section className="section-dark relative overflow-hidden">
+        <div
+          className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full opacity-[0.06] pointer-events-none"
+          style={{ background: 'radial-gradient(circle, var(--color-ember) 0%, transparent 70%)' }}
+        />
+        <div
+          className="absolute bottom-0 left-0 right-0 h-px"
+          style={{ background: 'linear-gradient(90deg, transparent, var(--color-ember), transparent)' }}
+        />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-20 md:py-28">
+          <div className="label mb-4" style={{ color: 'var(--color-ember-light)' }}>
+            Our Story
+          </div>
+          <h1
+            className="font-display font-800 tracking-[-0.03em] leading-[0.95] max-w-3xl"
+            style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
+          >
+            Halal Peri Peri Chicken —
+            <br />
+            <span style={{ color: 'var(--color-ember)' }}>From Southeast Africa to Your Plate</span>
           </h1>
-          <p className="mt-4 text-lg text-gray-300 max-w-2xl">
+          <p className="mt-6 text-lg max-w-2xl" style={{ color: 'var(--color-smoke-light)' }}>
             The story of how African Bird&apos;s Eye chili, Portuguese grilling, and our overnight
-            marinade come together in every piece of flame-grilled chicken we serve.
+            marinade come together in every piece.
           </p>
         </div>
       </section>
 
-      {/* Content — cornerstone page for AI citation */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-lg max-w-none text-gray-600">
-            <h2 className="text-3xl font-bold text-gray-900">What Is Peri Peri?</h2>
-            <p>
-              Peri peri (also spelled piri piri or peli peli) refers to both a style of cooking and
-              the chili pepper at its heart — the African Bird&apos;s Eye chili. This small but
-              powerful pepper grows wild across Southeast Africa, from Mozambique to Malawi, and has
-              been a staple of African cooking for centuries.
-            </p>
-            <p>
-              When Portuguese settlers arrived in Southeast Africa in the 15th century, they
-              discovered these fiery peppers and blended them with garlic, citrus, and oil to create
-              what we now know as peri peri sauce. They brought this flavor tradition back along their
-              trade routes, and it eventually became one of the world&apos;s great culinary exports.
-            </p>
+      {/* Content */}
+      <section className="py-20 md:py-28">
+        <div className="max-w-[800px] mx-auto px-6 lg:px-10">
+          {/* What is peri peri */}
+          <div className="mb-16">
+            <h2 className="font-display font-800 text-3xl mb-6">What Is Peri Peri?</h2>
+            <div className="space-y-5 text-lg leading-relaxed" style={{ color: 'var(--color-smoke)' }}>
+              <p>
+                Peri peri (also spelled piri piri or peli peli) refers to both a style of cooking and
+                the chili pepper at its heart — the African Bird&apos;s Eye chili. This small but
+                powerful pepper grows wild across Southeast Africa, from Mozambique to Malawi, and has
+                been a staple of African cooking for centuries.
+              </p>
+              <p>
+                When Portuguese settlers arrived in Southeast Africa in the 15th century, they
+                discovered these fiery peppers and blended them with garlic, citrus, and oil to create
+                what we now know as peri peri sauce. They brought this flavor tradition back along their
+                trade routes, and it eventually became one of the world&apos;s great culinary exports.
+              </p>
+            </div>
+          </div>
 
-            {/* TODO: Owner provides personal origin story — Southeast Africa to Bed-Stuy */}
-            <h2 className="text-3xl font-bold text-gray-900 mt-12">Our Story</h2>
-            <p>
-              <em>[Coming soon — the personal journey from Southeast Africa to Bed-Stuy, Brooklyn,
-              and what inspired the founding of Peri Peri Grill House. Check back for the full story.]</em>
+          {/* Origin story placeholder */}
+          <div
+            className="mb-16 p-10 rounded-sm"
+            style={{ backgroundColor: 'var(--color-cream-dark)', borderLeft: '3px solid var(--color-ember)' }}
+          >
+            <div className="label mb-3" style={{ color: 'var(--color-ember)' }}>Coming Soon</div>
+            <h2 className="font-display font-800 text-3xl mb-4">Our Story</h2>
+            <p className="text-lg italic" style={{ color: 'var(--color-smoke)' }}>
+              The personal journey from Southeast Africa to Bed-Stuy, Brooklyn, and what inspired
+              the founding of Peri Peri Grill House. Check back for the full story.
             </p>
+          </div>
 
-            <h2 className="text-3xl font-bold text-gray-900 mt-12">How We Make Our Chicken</h2>
-            <p>
-              At Peri Peri Grill House, we don&apos;t take shortcuts. Every piece of chicken goes
-              through a process that takes time but makes all the difference:
+          {/* How we make it */}
+          <div className="mb-16">
+            <h2 className="font-display font-800 text-3xl mb-6">How We Make Our Chicken</h2>
+            <p className="text-lg mb-8" style={{ color: 'var(--color-smoke)' }}>
+              At Peri Peri Grill House, we don&apos;t take shortcuts. Every piece goes through a
+              process that takes time but makes all the difference:
             </p>
-            <ol className="list-decimal pl-6 space-y-3">
-              <li>
-                <strong>Overnight Marinade:</strong> Our chicken is submerged in our house-made peri
-                peri spice blend for a minimum of 12 hours. This isn&apos;t a quick rub or a
-                30-minute soak — the flavors penetrate deep into the meat, creating juiciness and
-                complexity you can taste in every bite.
-              </li>
-              <li>
-                <strong>Flame-Grilled to Order:</strong> We grill every piece over an open flame,
-                never baked in an oven, never fried in oil. The live fire creates a smoky char on
-                the outside while keeping the inside juicy from the overnight marinade.
-              </li>
-              <li>
-                <strong>Basted with Your Choice of Sauce:</strong> As the chicken comes off the
-                grill, it&apos;s basted in your chosen heat level from our peri scale — from
-                Plain-ish (zero heat) to Extra Hot (African Bird&apos;s Eye chili at full force).
-              </li>
-            </ol>
+            <div className="space-y-0">
+              {[
+                {
+                  num: '01',
+                  title: 'Overnight Marinade',
+                  text: 'Our chicken is submerged in our house-made peri peri spice blend for a minimum of 12 hours. This isn\'t a quick rub or a 30-minute soak — the flavors penetrate deep into the meat.',
+                },
+                {
+                  num: '02',
+                  title: 'Flame-Grilled to Order',
+                  text: 'We grill every piece over an open flame, never baked in an oven, never fried in oil. The live fire creates a smoky char on the outside while keeping the inside juicy.',
+                },
+                {
+                  num: '03',
+                  title: 'Basted with Your Choice',
+                  text: 'As the chicken comes off the grill, it\'s basted in your chosen heat level — from Plain-ish to Extra Hot.',
+                },
+              ].map((step) => (
+                <div
+                  key={step.num}
+                  className="py-8 grid grid-cols-[48px_1fr] gap-6"
+                  style={{ borderBottom: '1px solid rgba(28,24,20,0.08)' }}
+                >
+                  <span className="font-display font-800 text-4xl" style={{ color: 'var(--color-ember)', lineHeight: 1 }}>
+                    {step.num}
+                  </span>
+                  <div>
+                    <h3 className="font-display font-700 text-xl mb-2">{step.title}</h3>
+                    <p style={{ color: 'var(--color-smoke)' }}>{step.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
 
-            <h2 className="text-3xl font-bold text-gray-900 mt-12">100% Halal — Always</h2>
-            <p>
+          {/* Halal */}
+          <div className="mb-16">
+            <h2 className="font-display font-800 text-3xl mb-6">100% Halal — Always</h2>
+            <p className="text-lg leading-relaxed" style={{ color: 'var(--color-smoke)' }}>
               All of our chicken and meat is certified halal. This is a non-negotiable commitment
               to the communities we serve in Brooklyn and Long Island. When you eat at Peri Peri
               Grill House, you know exactly what you&apos;re getting — halal food prepared with
@@ -87,22 +133,28 @@ export default function AboutChickenPage() {
             </p>
           </div>
 
-          {/* Heat Levels */}
-          <div className="mt-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Peri Peri Heat Scale</h2>
-            <p className="text-gray-500 mb-8">
-              Seven levels of flavor and heat — from zero spice to maximum fire. Every level is
-              packed with flavor, so even our mildest option tastes incredible.
+          {/* Heat Scale */}
+          <div className="mb-16">
+            <h2 className="font-display font-800 text-3xl mb-3">The Peri Peri Heat Scale</h2>
+            <p className="mb-8" style={{ color: 'var(--color-smoke)' }}>
+              Seven levels of flavor and heat. Every level is packed with flavor.
             </p>
-            <div className="space-y-4">
+            <div className="space-y-0">
               {heatLevels.map((level, i) => (
-                <div key={level.name} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-red-100 flex items-center justify-center font-bold text-red-600">
+                <div
+                  key={level.name}
+                  className="py-5 grid grid-cols-[48px_1fr] gap-6 items-start"
+                  style={{ borderBottom: '1px solid rgba(28,24,20,0.06)' }}
+                >
+                  <span
+                    className="font-display font-800 text-3xl text-center"
+                    style={{ color: `hsl(${20 - i * 3}, ${70 + i * 4}%, ${55 - i * 4}%)`, lineHeight: 1 }}
+                  >
                     {i + 1}
-                  </div>
+                  </span>
                   <div>
-                    <h3 className="font-bold text-gray-900">{level.name}</h3>
-                    <p className="text-sm text-gray-500 mt-1">{level.description}</p>
+                    <h3 className="font-display font-700 text-lg">{level.name}</h3>
+                    <p className="text-sm mt-1" style={{ color: 'var(--color-smoke)' }}>{level.description}</p>
                   </div>
                 </div>
               ))}
@@ -110,21 +162,11 @@ export default function AboutChickenPage() {
           </div>
 
           {/* CTA */}
-          <div className="mt-16 text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Ready to Try It?</h2>
+          <div className="text-center pt-8">
+            <h2 className="font-display font-700 text-2xl mb-6">Ready to try it?</h2>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="/order-online"
-                className="inline-flex items-center px-8 py-4 bg-red-600 text-white font-bold rounded-xl hover:bg-red-700 transition-colors"
-              >
-                Order Online
-              </Link>
-              <Link
-                href="/brooklyn-bed-stuy"
-                className="inline-flex items-center px-8 py-4 border-2 border-gray-200 text-gray-700 font-bold rounded-xl hover:bg-gray-50 transition-colors"
-              >
-                View Brooklyn Menu
-              </Link>
+              <Link href="/order-online" className="btn-ember">Order Online</Link>
+              <Link href="/brooklyn-bed-stuy" className="btn-outline">View Brooklyn Menu</Link>
             </div>
           </div>
         </div>

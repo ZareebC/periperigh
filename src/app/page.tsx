@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { buildMetadata } from '@/lib/metadata';
 import { locations } from '@/data/locations';
-import { menuCategories } from '@/data/menu';
+import { menuCategories, heatLevels } from '@/data/menu';
 import LocationCard from '@/components/location/LocationCard';
 import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema';
 
@@ -24,124 +24,263 @@ export default function HomePage() {
         <LocalBusinessSchema key={loc.id} location={loc} />
       ))}
 
-      {/* Hero */}
-      <section className="relative bg-gradient-to-br from-gray-950 via-gray-900 to-red-950 text-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
-              Flame-Grilled Halal Peri Peri Chicken in{' '}
-              <span className="text-red-400">Brooklyn &amp; Long Island</span>
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl">
-              Our chicken is 100% halal, marinated overnight in our house-made peri peri sauce with
-              African Bird&apos;s Eye chili, then flame-grilled to order. Choose your heat level —
-              from mellow lemon &amp; herb to face-melting extra hot.
+      {/* ========== HERO — Asymmetric, warm, bold ========== */}
+      <section className="section-dark relative overflow-hidden">
+        {/* Subtle ember glow in corner */}
+        <div
+          className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full opacity-[0.07] pointer-events-none"
+          style={{ background: 'radial-gradient(circle, var(--color-ember) 0%, transparent 70%)' }}
+        />
+        <div
+          className="absolute bottom-0 left-0 right-0 h-px"
+          style={{ background: 'linear-gradient(90deg, transparent, var(--color-ember), transparent)' }}
+        />
+
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 md:py-32 lg:py-40">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+            {/* Main headline — offset left */}
+            <div className="lg:col-span-8">
+              <div className="label mb-6" style={{ color: 'var(--color-ember-light)' }}>
+                Brooklyn &middot; Long Island &middot; 100% Halal
+              </div>
+              <h1
+                className="font-display font-800 tracking-[-0.03em] leading-[0.95]"
+                style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}
+              >
+                Flame-grilled.
+                <br />
+                Marinated overnight.
+                <br />
+                <span style={{ color: 'var(--color-ember)' }}>
+                  Unapologetically bold.
+                </span>
+              </h1>
+              <p
+                className="mt-8 text-lg md:text-xl leading-relaxed max-w-xl"
+                style={{ color: 'var(--color-smoke-light)' }}
+              >
+                Our peri peri chicken is marinated overnight in African Bird&apos;s Eye chili
+                and flame-grilled to order. Seven heat levels. Two locations. Zero shortcuts.
+              </p>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link href="/order-online" className="btn-ember !text-base !px-8 !py-4">
+                  Order Online
+                </Link>
+                <Link href="/brooklyn-bed-stuy" className="btn-outline btn-outline-light !text-base !px-8 !py-4">
+                  View Menu
+                </Link>
+              </div>
+            </div>
+
+            {/* Quick info — right column */}
+            <div className="lg:col-span-4 space-y-6">
+              {locations.map((loc) => (
+                <div key={loc.id} className="pb-6" style={{ borderBottom: '1px solid var(--color-char-medium)' }}>
+                  <div className="label mb-2" style={{ color: 'var(--color-gold)' }}>
+                    {loc.neighborhood}
+                  </div>
+                  <p className="font-display font-500 text-sm" style={{ color: 'var(--color-cream)' }}>
+                    {loc.address.street}
+                  </p>
+                  <a
+                    href={`tel:${loc.phone.e164}`}
+                    className="font-display text-sm transition-colors"
+                    style={{ color: 'var(--color-smoke-light)' }}
+                  >
+                    {loc.phone.formatted}
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== THE PROCESS — Editorial strip ========== */}
+      <section className="py-24 md:py-32">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            {/* Left — section label */}
+            <div className="lg:col-span-4">
+              <div className="label mb-4" style={{ color: 'var(--color-ember)' }}>
+                What makes us different
+              </div>
+              <div className="ember-line mb-6" />
+              <h2 className="font-display font-800 text-4xl md:text-5xl tracking-tight">
+                Three things.
+                <br />
+                No compromise.
+              </h2>
+            </div>
+
+            {/* Right — the three pillars */}
+            <div className="lg:col-span-8 lg:pt-2">
+              <div className="space-y-0">
+                {/* Pillar 1 */}
+                <div className="py-8" style={{ borderBottom: '1px solid rgba(28,24,20,0.1)' }}>
+                  <div className="grid grid-cols-[60px_1fr] gap-6 items-start">
+                    <span className="font-display font-800 text-5xl" style={{ color: 'var(--color-ember)', lineHeight: 1 }}>
+                      01
+                    </span>
+                    <div>
+                      <h3 className="font-display font-700 text-xl mb-2">Overnight Marinade</h3>
+                      <p style={{ color: 'var(--color-smoke)' }}>
+                        Our chicken sits in our peri peri spice blend for a minimum of 12 hours.
+                        Not a quick rub. Not a 30-minute soak. The flavors penetrate deep into
+                        the meat, creating a depth you can taste in every single bite.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Pillar 2 */}
+                <div className="py-8" style={{ borderBottom: '1px solid rgba(28,24,20,0.1)' }}>
+                  <div className="grid grid-cols-[60px_1fr] gap-6 items-start">
+                    <span className="font-display font-800 text-5xl" style={{ color: 'var(--color-ember)', lineHeight: 1 }}>
+                      02
+                    </span>
+                    <div>
+                      <h3 className="font-display font-700 text-xl mb-2">Flame-Grilled to Order</h3>
+                      <p style={{ color: 'var(--color-smoke)' }}>
+                        Every piece is cooked over live fire — never baked in an oven, never fried
+                        in oil. The open flame creates that smoky char on the outside while our
+                        overnight marinade keeps the inside impossibly juicy.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Pillar 3 */}
+                <div className="py-8">
+                  <div className="grid grid-cols-[60px_1fr] gap-6 items-start">
+                    <span className="font-display font-800 text-5xl" style={{ color: 'var(--color-ember)', lineHeight: 1 }}>
+                      03
+                    </span>
+                    <div>
+                      <h3 className="font-display font-700 text-xl mb-2">100% Halal. Always.</h3>
+                      <p style={{ color: 'var(--color-smoke)' }}>
+                        All of our chicken and meat is certified halal. This is non-negotiable.
+                        When you eat here, you know exactly what you&apos;re getting — halal food
+                        prepared with care and respect for the communities we serve.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== HEAT SCALE — Visual strip ========== */}
+      <section className="section-dark py-20 md:py-28 relative overflow-hidden">
+        <div
+          className="absolute top-0 left-0 right-0 h-px"
+          style={{ background: 'linear-gradient(90deg, transparent, var(--color-ember), transparent)' }}
+        />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div className="text-center mb-16">
+            <div className="label mb-4" style={{ color: 'var(--color-ember-light)' }}>
+              The Peri Scale
+            </div>
+            <h2 className="font-display font-800 text-4xl md:text-5xl tracking-tight">
+              Seven levels of fire.
+            </h2>
+            <p className="mt-4 text-lg max-w-lg mx-auto" style={{ color: 'var(--color-smoke-light)' }}>
+              From zero heat to maximum flame — every level is packed with flavor.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/order-online"
-                className="inline-flex items-center px-8 py-4 bg-red-600 text-white text-lg font-bold rounded-xl hover:bg-red-700 transition-colors shadow-lg shadow-red-600/20"
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3">
+            {heatLevels.map((level, i) => (
+              <div
+                key={level.name}
+                className="p-5 rounded-sm text-center transition-all hover:scale-105"
+                style={{
+                  backgroundColor: 'var(--color-char-warm)',
+                  borderBottom: `3px solid`,
+                  borderColor: `hsl(${20 - i * 3}, ${70 + i * 4}%, ${55 - i * 4}%)`,
+                }}
               >
-                Order Online
-              </Link>
-              <Link
-                href="/brooklyn-bed-stuy"
-                className="inline-flex items-center px-8 py-4 border-2 border-white/20 text-white text-lg font-bold rounded-xl hover:bg-white/10 transition-colors"
-              >
-                View Menu
-              </Link>
-            </div>
+                <div
+                  className="font-display font-800 text-3xl mb-2"
+                  style={{ color: `hsl(${20 - i * 3}, ${70 + i * 4}%, ${55 - i * 4}%)` }}
+                >
+                  {i + 1}
+                </div>
+                <div className="font-display font-600 text-sm" style={{ color: 'var(--color-cream)' }}>
+                  {level.name}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* What Makes Us Different */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
-            What Makes Peri Peri Grill House Different
-          </h2>
-          <p className="text-gray-500 text-center max-w-2xl mx-auto mb-12">
-            Not all peri peri is created equal. Here&apos;s what sets our flame-grilled chicken apart.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">
-                🔥
+      {/* ========== MENU HIGHLIGHTS — Editorial cards ========== */}
+      <section className="py-24 md:py-32 section-warm grill-pattern">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
+            <div>
+              <div className="label mb-4" style={{ color: 'var(--color-ember)' }}>
+                From the grill
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Flame-Grilled, Never Baked</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                Every piece of chicken is cooked over an open flame — not baked in an oven,
-                not fried in oil. Live fire creates that signature smoky char and seals in the
-                juices from our overnight marinade.
-              </p>
+              <div className="ember-line mb-6" />
+              <h2 className="font-display font-800 text-4xl md:text-5xl tracking-tight">
+                Fan favorites.
+              </h2>
             </div>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">
-                🌙
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Marinated Overnight</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                Our chicken isn&apos;t just seasoned on the spot. It&apos;s marinated overnight in
-                our special blend of peri peri spices and African Bird&apos;s Eye chili. This slow
-                marinade creates depth of flavor you simply can&apos;t rush.
-              </p>
-            </div>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">
-                ✅
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">100% Halal Certified</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                All of our chicken and meat is 100% halal. We&apos;re committed to serving our
-                community with food that meets halal standards — no exceptions, no compromises.
-              </p>
-            </div>
+            <Link
+              href="/brooklyn-bed-stuy"
+              className="font-display font-600 text-sm uppercase tracking-wider transition-colors hover:opacity-70"
+              style={{ color: 'var(--color-ember)' }}
+            >
+              Full menu →
+            </Link>
           </div>
-        </div>
-      </section>
 
-      {/* Popular Items */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
-            Fan Favorites
-          </h2>
-          <p className="text-gray-500 text-center max-w-2xl mx-auto mb-12">
-            Our most popular items — the ones people come back for again and again.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
             {popularItems.map((item) => (
-              <div key={item.name} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                <h3 className="font-bold text-gray-900">{item.name}</h3>
-                <p className="text-sm text-gray-500 mt-2 leading-relaxed">{item.description}</p>
-                <p className="text-lg font-bold text-red-600 mt-3">
-                  ${typeof item.price === 'number' ? item.price.toFixed(2) : item.price}
+              <div
+                key={item.name}
+                className="p-8 transition-colors"
+                style={{
+                  backgroundColor: 'var(--color-cream)',
+                  borderRight: '1px solid rgba(28,24,20,0.06)',
+                  borderBottom: '1px solid rgba(28,24,20,0.06)',
+                }}
+              >
+                <div className="flex items-start justify-between gap-4 mb-3">
+                  <h3 className="font-display font-700 text-lg">{item.name}</h3>
+                  <span className="font-display font-700 text-lg flex-shrink-0" style={{ color: 'var(--color-ember)' }}>
+                    ${typeof item.price === 'number' ? item.price.toFixed(2) : item.price}
+                  </span>
+                </div>
+                <p className="text-[15px] leading-relaxed" style={{ color: 'var(--color-smoke)' }}>
+                  {item.description}
                 </p>
               </div>
             ))}
           </div>
-          <div className="text-center mt-10">
-            <Link
-              href="/brooklyn-bed-stuy"
-              className="inline-flex items-center px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors"
-            >
-              View Full Menu
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* Locations */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
-            Two Locations Serving NYC &amp; Long Island
-          </h2>
-          <p className="text-gray-500 text-center max-w-2xl mx-auto mb-12">
-            Visit us in Bed-Stuy, Brooklyn or Bethpage, Long Island. Both locations offer dine-in,
-            takeout, and delivery.
-          </p>
+      {/* ========== LOCATIONS — Clean, informative ========== */}
+      <section className="py-24 md:py-32">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div className="text-center mb-16">
+            <div className="label mb-4" style={{ color: 'var(--color-ember)' }}>
+              Visit us
+            </div>
+            <h2 className="font-display font-800 text-4xl md:text-5xl tracking-tight">
+              Two locations. One standard.
+            </h2>
+            <p className="mt-4 text-lg max-w-lg mx-auto" style={{ color: 'var(--color-smoke)' }}>
+              Dine in, takeout, or delivery — both locations serve the same
+              overnight-marinated, flame-grilled halal peri peri chicken.
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {locations.map((loc) => (
               <LocationCard key={loc.id} location={loc} showHours />
@@ -150,24 +289,35 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-red-600 to-red-700 text-white text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready for Real Peri Peri?</h2>
-          <p className="text-red-100 text-lg mb-8 max-w-xl mx-auto">
-            Order online for pickup or delivery, or visit us in Brooklyn or Long Island.
+      {/* ========== CTA — Bold, warm ========== */}
+      <section className="section-dark py-24 md:py-32 relative overflow-hidden text-center">
+        <div
+          className="absolute top-0 left-0 right-0 h-px"
+          style={{ background: 'linear-gradient(90deg, transparent, var(--color-ember), transparent)' }}
+        />
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full opacity-[0.04] pointer-events-none"
+          style={{ background: 'radial-gradient(circle, var(--color-ember) 0%, transparent 70%)' }}
+        />
+        <div className="max-w-2xl mx-auto px-6 relative z-10">
+          <h2
+            className="font-display font-800 tracking-tight leading-[1.05]"
+            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)' }}
+          >
+            Ready for chicken
+            <br />
+            that actually tastes
+            <br />
+            <span style={{ color: 'var(--color-ember)' }}>like something?</span>
+          </h2>
+          <p className="mt-6 text-lg" style={{ color: 'var(--color-smoke-light)' }}>
+            Order for pickup or delivery. Visit us in Brooklyn or Long Island.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/order-online"
-              className="inline-flex items-center px-8 py-4 bg-white text-red-600 text-lg font-bold rounded-xl hover:bg-gray-100 transition-colors"
-            >
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <Link href="/order-online" className="btn-ember !text-base !px-10 !py-4">
               Order Now
             </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center px-8 py-4 border-2 border-white/30 text-white text-lg font-bold rounded-xl hover:bg-white/10 transition-colors"
-            >
+            <Link href="/contact" className="btn-outline btn-outline-light !text-base !px-10 !py-4">
               Contact Us
             </Link>
           </div>

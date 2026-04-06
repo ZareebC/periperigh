@@ -37,22 +37,35 @@ export default function ContactForm() {
       (e.target as HTMLFormElement).reset();
     } catch (err) {
       setStatus('error');
-      setErrorMessage(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+      setErrorMessage(err instanceof Error ? err.message : 'Something went wrong.');
     }
   }
 
+  const inputStyle = {
+    backgroundColor: 'var(--color-cream)',
+    border: '1px solid rgba(28,24,20,0.12)',
+    color: 'var(--color-char)',
+    fontFamily: 'var(--font-body)',
+    borderRadius: '4px',
+  };
+
   if (status === 'success') {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center">
-        <h3 className="text-lg font-bold text-green-800 mb-2">Message Sent!</h3>
-        <p className="text-green-700">
-          Thank you for reaching out. We&apos;ll get back to you as soon as possible.
+      <div
+        className="p-10 rounded-sm text-center"
+        style={{ backgroundColor: 'var(--color-cream-dark)', border: '1px solid rgba(28,24,20,0.08)' }}
+      >
+        <div className="label mb-3" style={{ color: 'var(--color-ember)' }}>Sent</div>
+        <h3 className="font-display font-700 text-xl mb-3">Message received.</h3>
+        <p style={{ color: 'var(--color-smoke)' }}>
+          Thank you for reaching out. We&apos;ll get back to you soon.
         </p>
         <button
           onClick={() => setStatus('idle')}
-          className="mt-4 text-sm text-green-600 underline hover:text-green-800"
+          className="mt-6 font-display text-sm font-600 transition-colors"
+          style={{ color: 'var(--color-ember)' }}
         >
-          Send another message
+          Send another message →
         </button>
       </div>
     );
@@ -62,7 +75,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="name" className="label block mb-2" style={{ color: 'var(--color-smoke)', fontSize: '11px' }}>
             Name *
           </label>
           <input
@@ -70,12 +83,13 @@ export default function ContactForm() {
             id="name"
             name="name"
             required
-            className="w-full px-4 py-3 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition"
+            className="w-full px-4 py-3 outline-none transition-all focus:ring-2"
+            style={{ ...inputStyle, '--tw-ring-color': 'var(--color-ember)' } as React.CSSProperties}
             placeholder="Your name"
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="email" className="label block mb-2" style={{ color: 'var(--color-smoke)', fontSize: '11px' }}>
             Email *
           </label>
           <input
@@ -83,7 +97,8 @@ export default function ContactForm() {
             id="email"
             name="email"
             required
-            className="w-full px-4 py-3 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition"
+            className="w-full px-4 py-3 outline-none transition-all focus:ring-2"
+            style={{ ...inputStyle, '--tw-ring-color': 'var(--color-ember)' } as React.CSSProperties}
             placeholder="you@email.com"
           />
         </div>
@@ -91,25 +106,27 @@ export default function ContactForm() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="phone" className="label block mb-2" style={{ color: 'var(--color-smoke)', fontSize: '11px' }}>
             Phone (optional)
           </label>
           <input
             type="tel"
             id="phone"
             name="phone"
-            className="w-full px-4 py-3 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition"
+            className="w-full px-4 py-3 outline-none transition-all focus:ring-2"
+            style={{ ...inputStyle, '--tw-ring-color': 'var(--color-ember)' } as React.CSSProperties}
             placeholder="(555) 555-5555"
           />
         </div>
         <div>
-          <label htmlFor="location" className="block text-sm font-medium text-gray-700 mb-1">
-            Preferred Location
+          <label htmlFor="location" className="label block mb-2" style={{ color: 'var(--color-smoke)', fontSize: '11px' }}>
+            Location
           </label>
           <select
             id="location"
             name="location"
-            className="w-full px-4 py-3 border border-gray-200 rounded-lg text-gray-900 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition"
+            className="w-full px-4 py-3 outline-none transition-all focus:ring-2"
+            style={{ ...inputStyle, '--tw-ring-color': 'var(--color-ember)' } as React.CSSProperties}
           >
             <option value="">Select a location</option>
             <option value="brooklyn">Brooklyn (Bed-Stuy)</option>
@@ -120,7 +137,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="message" className="label block mb-2" style={{ color: 'var(--color-smoke)', fontSize: '11px' }}>
           Message *
         </label>
         <textarea
@@ -128,13 +145,17 @@ export default function ContactForm() {
           name="message"
           required
           rows={5}
-          className="w-full px-4 py-3 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition resize-y"
-          placeholder="How can we help you? Catering inquiries, questions, feedback..."
+          className="w-full px-4 py-3 outline-none transition-all focus:ring-2 resize-y"
+          style={{ ...inputStyle, '--tw-ring-color': 'var(--color-ember)' } as React.CSSProperties}
+          placeholder="Catering inquiries, questions, feedback..."
         />
       </div>
 
       {status === 'error' && (
-        <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-sm text-red-700">
+        <div
+          className="p-4 rounded-sm text-sm"
+          style={{ backgroundColor: 'rgba(217,91,43,0.08)', color: 'var(--color-ember-dark)', border: '1px solid rgba(217,91,43,0.2)' }}
+        >
           {errorMessage}
         </div>
       )}
@@ -142,7 +163,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full sm:w-auto px-8 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        className="btn-ember disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {status === 'loading' ? 'Sending...' : 'Send Message'}
       </button>

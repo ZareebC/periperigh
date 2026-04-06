@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Syne, Source_Serif_4, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -8,7 +8,27 @@ import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
 import AIReferrerTracker from '@/components/analytics/AIReferrerTracker';
 import { siteConfig } from '@/data/siteConfig';
 
-const inter = Inter({ subsets: ['latin'] });
+const syne = Syne({
+  subsets: ['latin'],
+  variable: '--font-display',
+  display: 'swap',
+  weight: ['400', '500', '600', '700', '800'],
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ['latin'],
+  variable: '--font-body',
+  display: 'swap',
+  weight: ['400', '500', '600'],
+  style: ['normal', 'italic'],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+  weight: ['400', '500'],
+});
 
 export const metadata: Metadata = {
   title: {
@@ -25,8 +45,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} antialiased bg-white text-gray-900`}>
+    <html lang="en" className={`${syne.variable} ${sourceSerif.variable} ${jetbrainsMono.variable}`}>
+      <body>
         <GoogleAnalytics />
         <AIReferrerTracker />
         <RestaurantSchema />

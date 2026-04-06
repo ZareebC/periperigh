@@ -21,29 +21,33 @@ export default function ContactPage() {
       ))}
       <Breadcrumbs items={breadcrumbConfig['/contact']} />
 
-      <section className="py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 text-center mb-4">
-            Contact Peri Peri Grill House
-          </h1>
-          <p className="text-gray-500 text-center max-w-2xl mx-auto mb-16">
-            For catering inquiries, questions, or general information, feel free to reach out.
-            You can also email us directly at{' '}
-            <a href="mailto:help@periperigh.com" className="text-red-600 font-medium">
-              help@periperigh.com
-            </a>.
-          </p>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+      <section className="py-20 md:py-28">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            {/* Left — Form */}
+            <div className="lg:col-span-7">
+              <div className="label mb-4" style={{ color: 'var(--color-ember)' }}>
+                Get in touch
+              </div>
+              <div className="ember-line mb-6" />
+              <h1 className="font-display font-800 text-4xl md:text-5xl tracking-tight mb-4">
+                Contact Us
+              </h1>
+              <p className="text-lg mb-10" style={{ color: 'var(--color-smoke)' }}>
+                For catering inquiries, questions, or general information. You can also email us
+                directly at{' '}
+                <a href="mailto:help@periperigh.com" className="font-display font-600" style={{ color: 'var(--color-ember)' }}>
+                  help@periperigh.com
+                </a>
+              </p>
               <ContactForm />
             </div>
 
-            {/* Locations */}
-            <div className="space-y-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Our Locations</h2>
+            {/* Right — Locations */}
+            <div className="lg:col-span-5 space-y-8">
+              <div className="label mb-2" style={{ color: 'var(--color-smoke-light)' }}>
+                Our Locations
+              </div>
               {locations.map((loc) => (
                 <LocationCard key={loc.id} location={loc} showHours />
               ))}

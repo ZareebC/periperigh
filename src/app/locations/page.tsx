@@ -21,14 +21,18 @@ export default function LocationsPage() {
       ))}
       <Breadcrumbs items={breadcrumbConfig['/locations']} />
 
-      <section className="py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 text-center mb-4">
-            Our Locations — Brooklyn &amp; Long Island
+      <section className="py-20 md:py-28">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div className="label mb-4" style={{ color: 'var(--color-ember)' }}>
+            Visit us
+          </div>
+          <div className="ember-line mb-6" />
+          <h1 className="font-display font-800 text-4xl md:text-5xl tracking-tight mb-4">
+            Our Locations
           </h1>
-          <p className="text-gray-500 text-center max-w-2xl mx-auto mb-16">
-            Two locations serving 100% halal, flame-grilled peri peri chicken. Both offer
-            dine-in, takeout, and delivery.
+          <p className="text-lg mb-16 max-w-xl" style={{ color: 'var(--color-smoke)' }}>
+            Two locations serving 100% halal, flame-grilled peri peri chicken.
+            Both offer dine-in, takeout, and delivery.
           </p>
 
           <div className="space-y-16">

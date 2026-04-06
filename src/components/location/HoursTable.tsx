@@ -8,19 +8,25 @@ export default function HoursTable({ hours }: HoursTableProps) {
   const today = new Date().toLocaleDateString('en-US', { weekday: 'long' });
 
   return (
-    <div className="space-y-1">
-      <h4 className="text-sm font-semibold text-gray-900 mb-2">Hours</h4>
-      {hours.map((h) => (
-        <div
-          key={h.day}
-          className={`flex justify-between text-sm py-1 px-2 rounded ${
-            h.day === today ? 'bg-red-50 text-red-700 font-medium' : 'text-gray-600'
-          }`}
-        >
-          <span>{h.day}</span>
-          <span>{h.closed ? 'Closed' : `${h.open} – ${h.close}`}</span>
-        </div>
-      ))}
+    <div>
+      <h4 className="label mb-3" style={{ color: 'var(--color-smoke)' }}>Hours</h4>
+      <div className="space-y-0">
+        {hours.map((h) => (
+          <div
+            key={h.day}
+            className="flex justify-between text-sm py-1.5 px-3 -mx-3 rounded-sm"
+            style={{
+              backgroundColor: h.day === today ? 'var(--color-gold-muted)' : 'transparent',
+              color: h.day === today ? 'var(--color-char)' : 'var(--color-smoke)',
+              fontWeight: h.day === today ? 600 : 400,
+              fontFamily: h.day === today ? 'var(--font-display)' : 'inherit',
+            }}
+          >
+            <span>{h.day}</span>
+            <span>{h.closed ? 'Closed' : `${h.open} – ${h.close}`}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

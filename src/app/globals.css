@@ -1,6 +1,179 @@
 @import "tailwindcss";
 
+/* ============================================
+   PERI PERI GRILL HOUSE — "Ember & Char"
+   Warm editorial food magazine meets Brooklyn grill culture
+   ============================================ */
+
 :root {
-  --color-peri-red: #dc2626;
-  --color-peri-dark: #991b1b;
+  --color-cream: #faf6f0;
+  --color-cream-dark: #f0e9de;
+  --color-ember: #d95b2b;
+  --color-ember-dark: #b84a22;
+  --color-ember-light: #f0845a;
+  --color-char: #1c1814;
+  --color-char-warm: #2a2420;
+  --color-char-medium: #3d3530;
+  --color-smoke: #6b5e54;
+  --color-smoke-light: #9a8e84;
+  --color-gold: #c4a34a;
+  --color-gold-muted: rgba(196, 163, 74, 0.15);
+
+  --font-display: "Syne", sans-serif;
+  --font-body: "Source Serif 4", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
+
+/* ---- Base ---- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-char);
+  line-height: 1.7;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---- Noise texture overlay ---- */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+}
+
+/* ---- Typography ---- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--color-char);
+}
+
+.font-display { font-family: var(--font-display); }
+.font-body { font-family: var(--font-body); }
+.font-mono { font-family: var(--font-mono); }
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ---- Sections ---- */
+
+.section-dark {
+  background-color: var(--color-char) !important;
+  color: var(--color-cream) !important;
+}
+
+.section-dark h1,
+.section-dark h2,
+.section-dark h3,
+.section-dark h4 {
+  color: var(--color-cream) !important;
+}
+
+.section-warm {
+  background-color: var(--color-cream-dark);
+}
+
+/* ---- Ember accent line ---- */
+.ember-line {
+  width: 48px;
+  height: 3px;
+  background: var(--color-ember);
+  border-radius: 2px;
+}
+
+/* ---- Buttons ---- */
+
+.btn-ember {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background-color: var(--color-ember);
+  color: white;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+.btn-ember:hover {
+  background-color: var(--color-ember-dark);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: transparent;
+  color: var(--color-char);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  border: 2px solid var(--color-char);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-outline:hover {
+  background: var(--color-char);
+  color: var(--color-cream);
+}
+
+.btn-outline-light {
+  color: var(--color-cream);
+  border-color: rgba(250, 246, 240, 0.25);
+}
+.btn-outline-light:hover {
+  background: var(--color-cream);
+  color: var(--color-char);
+}
+
+/* ---- Grill pattern ---- */
+.grill-pattern {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 8px,
+    rgba(28, 24, 20, 0.03) 8px,
+    rgba(28, 24, 20, 0.03) 9px
+  );
+}
+
+/* ---- Selection ---- */
+::selection {
+  background-color: var(--color-ember);
+  color: white;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-cream); }
+::-webkit-scrollbar-thumb { background: var(--color-smoke-light); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-smoke); }

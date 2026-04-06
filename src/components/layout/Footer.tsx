@@ -4,73 +4,111 @@ import { siteConfig } from '@/data/siteConfig';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-950 text-gray-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <footer style={{ backgroundColor: 'var(--color-char)', color: 'var(--color-smoke-light)' }}>
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
-            <h3 className="text-xl font-bold text-white mb-4">
-              Peri Peri <span className="text-red-500">Grill House</span>
-            </h3>
-            <p className="text-sm text-gray-400 leading-relaxed">
-              100% halal peri peri chicken, marinated overnight and flame-grilled to order.
-              Serving Brooklyn and Long Island with bold African-inspired flavors.
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: 'var(--color-ember)' }} />
+              <span className="font-display font-800 text-lg tracking-tight" style={{ color: 'var(--color-cream)' }}>
+                PERI PERI
+              </span>
+              <span className="font-display font-400 text-lg tracking-tight" style={{ color: 'var(--color-smoke-light)' }}>
+                Grill House
+              </span>
+            </div>
+            <p className="text-sm leading-relaxed" style={{ color: 'var(--color-smoke)' }}>
+              100% halal peri peri chicken, marinated overnight in African Bird&apos;s Eye chili,
+              flame-grilled to order. Brooklyn &amp; Long Island.
             </p>
-            <div className="flex gap-4 mt-5">
-              <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-400 hover:text-red-500 transition-colors">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-              </a>
-              <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-gray-400 hover:text-red-500 transition-colors">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-              </a>
-              <a href={siteConfig.social.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="text-gray-400 hover:text-red-500 transition-colors">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-              </a>
+            <div className="flex gap-5 mt-6">
+              {[
+                { href: siteConfig.social.instagram, label: 'Instagram', icon: 'M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z' },
+                { href: siteConfig.social.facebook, label: 'Facebook', icon: 'M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z' },
+                { href: siteConfig.social.tiktok, label: 'TikTok', icon: 'M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z' },
+              ].map(({ href, label, icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="transition-colors"
+                  style={{ color: 'var(--color-smoke)' }}
+                >
+                  <svg className="w-5 h-5 hover:opacity-70" fill="currentColor" viewBox="0 0 24 24">
+                    <path d={icon} />
+                  </svg>
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Locations */}
           {locations.map((loc) => (
             <div key={loc.id}>
-              <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-                {loc.shortName}
+              <h4 className="label mb-4" style={{ color: 'var(--color-gold)' }}>
+                {loc.neighborhood}
               </h4>
-              <address className="not-italic text-sm space-y-2 text-gray-400">
+              <address className="not-italic text-sm space-y-1.5" style={{ color: 'var(--color-smoke)' }}>
                 <p>{loc.address.street}</p>
                 <p>{loc.address.city}, {loc.address.state} {loc.address.zip}</p>
-                <p>
-                  <a href={`tel:${loc.phone.e164}`} className="hover:text-red-400 transition-colors">
+                <p className="pt-1">
+                  <a href={`tel:${loc.phone.e164}`} className="transition-colors hover:opacity-70" style={{ color: 'var(--color-cream)' }}>
                     {loc.phone.formatted}
                   </a>
                 </p>
               </address>
               <Link
                 href={`/${loc.slug}`}
-                className="inline-block mt-3 text-sm text-red-400 hover:text-red-300 transition-colors"
+                className="inline-block mt-4 font-display text-sm font-600 transition-colors hover:opacity-70"
+                style={{ color: 'var(--color-ember-light)' }}
               >
-                View menu & hours →
+                Menu &amp; hours →
               </Link>
             </div>
           ))}
 
-          {/* Quick Links */}
+          {/* Links */}
           <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h4 className="label mb-4" style={{ color: 'var(--color-gold)' }}>
               Quick Links
             </h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/order-online" className="hover:text-red-400 transition-colors">Order Online</Link></li>
-              <li><Link href="/halal-peri-peri-chicken" className="hover:text-red-400 transition-colors">Our Chicken</Link></li>
-              <li><Link href="/locations" className="hover:text-red-400 transition-colors">Locations</Link></li>
-              <li><Link href="/faq" className="hover:text-red-400 transition-colors">FAQ</Link></li>
-              <li><Link href="/contact" className="hover:text-red-400 transition-colors">Contact Us</Link></li>
-              <li><a href={`mailto:${siteConfig.email}`} className="hover:text-red-400 transition-colors">{siteConfig.email}</a></li>
+            <ul className="space-y-2.5 text-sm">
+              {[
+                { label: 'Order Online', href: '/order-online' },
+                { label: 'Our Chicken', href: '/halal-peri-peri-chicken' },
+                { label: 'Locations', href: '/locations' },
+                { label: 'FAQ', href: '/faq' },
+                { label: 'Contact', href: '/contact' },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="transition-colors hover:opacity-70" style={{ color: 'var(--color-smoke)' }}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <a href={`mailto:${siteConfig.email}`} className="transition-colors hover:opacity-70" style={{ color: 'var(--color-smoke)' }}>
+                  {siteConfig.email}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-xs text-gray-500">
-          <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved. 100% Halal.</p>
+        {/* Bottom bar */}
+        <div
+          className="mt-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+          style={{ borderTop: '1px solid var(--color-char-medium)' }}
+        >
+          <p className="label" style={{ color: 'var(--color-smoke)', fontSize: '10px' }}>
+            &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved. 100% Halal.
+          </p>
+          <p className="label" style={{ color: 'var(--color-char-medium)', fontSize: '10px' }}>
+            Brooklyn &middot; Long Island
+          </p>
         </div>
       </div>
     </footer>
