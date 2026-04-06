@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+:root {
+  --color-peri-red: #dc2626;
+  --color-peri-dark: #991b1b;
+}
