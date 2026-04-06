@@ -1,7 +1,14 @@
-import { menuCategories, heatLevels } from '@/data/menu';
+import { menuCategories, heatLevels, getMenuForLocation } from '@/data/menu';
 import MenuSection from './MenuSection';
 
-export default function FullMenu() {
+interface FullMenuProps {
+  /** Filter menu to a specific location. Omit to show all items. */
+  locationId?: 'brooklyn' | 'bethpage';
+}
+
+export default function FullMenu({ locationId }: FullMenuProps) {
+  const categories = locationId ? getMenuForLocation(locationId) : menuCategories;
+
   return (
     <div>
       {/* Heat Levels */}
@@ -39,7 +46,7 @@ export default function FullMenu() {
 
       {/* Menu Categories */}
       <div className="space-y-14">
-        {menuCategories.map((category) => (
+        {categories.map((category) => (
           <MenuSection key={category.id} category={category} />
         ))}
       </div>

@@ -46,7 +46,7 @@ export default function HomePage() {
               </div>
               <h1
                 className="uppercase leading-[0.9]"
-                style={{ fontFamily: 'var(--font-hero)', fontWeight: 400, letterSpacing: '-0.02em', fontSize: 'clamp(2.8rem, 6.5vw, 5rem)' }}
+                style={{ fontFamily: 'var(--font-hero)', fontWeight: 400, letterSpacing: '0.02em', fontSize: 'clamp(3.5rem, 8vw, 7rem)' }}
               >
                 Flame-grilled.
                 <br />

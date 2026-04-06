@@ -1,6 +1,6 @@
 import JsonLd from './JsonLd';
 import { siteConfig } from '@/data/siteConfig';
-import { menuCategories } from '@/data/menu';
+import { getMenuForLocation } from '@/data/menu';
 import type { Location } from '@/data/locations';
 
 interface MenuSchemaProps {
@@ -8,6 +8,8 @@ interface MenuSchemaProps {
 }
 
 export default function MenuSchema({ location }: MenuSchemaProps) {
+  const categories = getMenuForLocation(location.id as 'brooklyn' | 'bethpage');
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Menu',
@@ -15,7 +17,7 @@ export default function MenuSchema({ location }: MenuSchemaProps) {
     name: `${siteConfig.name} Menu — ${location.shortName}`,
     description: `Full menu for ${siteConfig.name} at ${location.address.full}. 100% halal peri peri chicken, flame-grilled and marinated overnight.`,
     url: `${siteConfig.domain}/${location.slug}`,
-    hasMenuSection: menuCategories.map((category) => ({
+    hasMenuSection: categories.map((category) => ({
       '@type': 'MenuSection',
       name: category.name,
       description: category.description,

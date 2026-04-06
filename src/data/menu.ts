@@ -5,6 +5,8 @@ export interface MenuItem {
   popular?: boolean;
   spicy?: boolean;
   image?: string;
+  /** Which locations carry this item. Omit = both locations. */
+  locations?: ('brooklyn' | 'bethpage')[];
 }
 
 export interface MenuCategory {
@@ -121,6 +123,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           'Crispy golden chicken, juicy on the inside, crackling on the outside, drenched in mild or spicy peri-peri sauce.',
         price: 11.99,
+        locations: ['bethpage'],
       },
     ],
   },
@@ -337,6 +340,7 @@ export const menuCategories: MenuCategory[] = [
           'Creamy French vanilla ice cream blended with chocolate and pistachio sauce, mixed with Knafeh and topped with crunchy Knafeh. A rich Dubai-style treat in every sip.',
         price: 13.29,
         popular: true,
+        locations: ['bethpage'],
       },
       {
         name: 'Mango Milkshake',
@@ -359,3 +363,15 @@ export const menuCategories: MenuCategory[] = [
     ],
   },
 ];
+
+/** Returns menu categories filtered for a specific location, removing empty categories */
+export function getMenuForLocation(locationId: 'brooklyn' | 'bethpage'): MenuCategory[] {
+  return menuCategories
+    .map((category) => ({
+      ...category,
+      items: category.items.filter(
+        (item) => !item.locations || item.locations.includes(locationId)
+      ),
+    }))
+    .filter((category) => category.items.length > 0);
+}

@@ -93,7 +93,7 @@ export default function BethpagePage() {
           <p className="mb-12" style={{ color: 'var(--color-smoke)' }}>
             100% halal peri peri chicken, marinated overnight and flame-grilled to order. Prices may vary.
           </p>
-          <FullMenu />
+          <FullMenu locationId="bethpage" />
         </div>
       </section>
 

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Syne, Source_Serif_4, JetBrains_Mono, Archivo_Black } from 'next/font/google';
+import { Syne, Source_Serif_4, JetBrains_Mono, Bebas_Neue } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -23,7 +23,7 @@ const sourceSerif = Source_Serif_4({
   style: ['normal', 'italic'],
 });
 
-const heroFont = Archivo_Black({
+const heroFont = Bebas_Neue({
   subsets: ['latin'],
   variable: '--font-hero',
   display: 'swap',
