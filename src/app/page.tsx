@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { buildMetadata } from '@/lib/metadata';
 import { locations } from '@/data/locations';
 import { menuCategories, heatLevels } from '@/data/menu';
@@ -25,28 +26,23 @@ export default function HomePage() {
         <LocalBusinessSchema key={loc.id} location={loc} />
       ))}
 
-      {/* ========== HERO — Asymmetric, warm, bold ========== */}
+      {/* ========== HERO — Photo + type split ========== */}
       <section className="section-dark relative overflow-hidden">
-        {/* Subtle ember glow in corner */}
-        <div
-          className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full opacity-[0.07] pointer-events-none"
-          style={{ background: 'radial-gradient(circle, var(--color-ember) 0%, transparent 70%)' }}
-        />
         <div
           className="absolute bottom-0 left-0 right-0 h-px"
           style={{ background: 'linear-gradient(90deg, transparent, var(--color-ember), transparent)' }}
         />
 
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-16 md:py-20 lg:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-            {/* Main headline — offset left */}
-            <div className="lg:col-span-8">
-              <div className="label mb-6" style={{ color: 'var(--color-ember-light)' }}>
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-14 md:py-16 lg:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            {/* Left — text */}
+            <div>
+              <div className="label mb-5" style={{ color: 'var(--color-ember-light)' }}>
                 Brooklyn &middot; Long Island &middot; 100% Halal
               </div>
               <h1
                 className="uppercase leading-[0.9]"
-                style={{ fontFamily: 'var(--font-hero)', fontWeight: 400, letterSpacing: '0.02em', fontSize: 'clamp(3.5rem, 8vw, 7rem)' }}
+                style={{ fontFamily: 'var(--font-hero)', fontWeight: 400, letterSpacing: '0.02em', fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}
               >
                 Flame-grilled.
                 <br />
@@ -57,13 +53,13 @@ export default function HomePage() {
                 </span>
               </h1>
               <p
-                className="mt-8 text-lg md:text-xl leading-relaxed max-w-xl"
+                className="mt-6 text-lg leading-relaxed max-w-lg"
                 style={{ color: 'var(--color-smoke-light)' }}
               >
                 Our peri peri chicken is marinated overnight in African Bird&apos;s Eye chili
                 and flame-grilled to order. Seven heat levels. Two locations. Zero shortcuts.
               </p>
-              <div className="mt-10 flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-wrap gap-4">
                 <Link href="/order-online" className="btn-ember !text-base !px-8 !py-4">
                   Order Online
                 </Link>
@@ -71,27 +67,45 @@ export default function HomePage() {
                   View Menu
                 </Link>
               </div>
+              {/* Location strip */}
+              <div className="mt-10 flex flex-wrap gap-8">
+                {locations.map((loc) => (
+                  <div key={loc.id}>
+                    <div className="label mb-1" style={{ color: 'var(--color-gold)', fontSize: '10px' }}>
+                      {loc.neighborhood}
+                    </div>
+                    <p className="font-display font-500 text-sm" style={{ color: 'var(--color-cream)' }}>
+                      {loc.address.street}
+                    </p>
+                    <a
+                      href={`tel:${loc.phone.e164}`}
+                      className="font-display text-xs transition-colors"
+                      style={{ color: 'var(--color-smoke-light)' }}
+                    >
+                      {loc.phone.formatted}
+                    </a>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Quick info — right column */}
-            <div className="lg:col-span-4 space-y-6">
-              {locations.map((loc) => (
-                <div key={loc.id} className="pb-6" style={{ borderBottom: '1px solid var(--color-char-medium)' }}>
-                  <div className="label mb-2" style={{ color: 'var(--color-gold)' }}>
-                    {loc.neighborhood}
-                  </div>
-                  <p className="font-display font-500 text-sm" style={{ color: 'var(--color-cream)' }}>
-                    {loc.address.street}
-                  </p>
-                  <a
-                    href={`tel:${loc.phone.e164}`}
-                    className="font-display text-sm transition-colors"
-                    style={{ color: 'var(--color-smoke-light)' }}
-                  >
-                    {loc.phone.formatted}
-                  </a>
-                </div>
-              ))}
+            {/* Right — hero image */}
+            <div className="relative">
+              <div className="relative rounded-sm overflow-hidden aspect-[4/3]">
+                <Image
+                  src="/images/hero-chicken-flame-grilled.jpg"
+                  alt="Flame-grilled peri peri chicken with fresh peppers on a wooden board"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+              {/* Ember accent corner */}
+              <div
+                className="absolute -bottom-3 -right-3 w-24 h-24 -z-0 rounded-sm"
+                style={{ backgroundColor: 'var(--color-ember)', opacity: 0.15 }}
+              />
             </div>
           </div>
         </div>
@@ -243,6 +257,28 @@ export default function HomePage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ========== PHOTO STRIP ========== */}
+      <section className="py-0 overflow-hidden">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
+          {[
+            { src: '/images/hero-chicken-flame-grilled.jpg', alt: 'Flame-grilled peri peri chicken with peppers' },
+            { src: '/images/chicken-breast-rice-platter.jpg', alt: 'Chicken breast platter with peri peri rice' },
+            { src: '/images/falafel-wrap-fries.jpg', alt: 'Falafel wrap with peri peri fries' },
+            { src: '/images/mango-milkshake.jpg', alt: 'Mango milkshake with toppings' },
+          ].map((photo) => (
+            <div key={photo.src} className="relative aspect-square overflow-hidden">
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+            </div>
+          ))}
         </div>
       </section>
 

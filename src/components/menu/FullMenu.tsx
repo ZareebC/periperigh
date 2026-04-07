@@ -1,5 +1,6 @@
 import { menuCategories, heatLevels, getMenuForLocation } from '@/data/menu';
 import MenuSection from './MenuSection';
+import MozzPlanks from './MozzPlanks';
 
 interface FullMenuProps {
   /** Filter menu to a specific location. Omit to show all items. */
@@ -46,9 +47,13 @@ export default function FullMenu({ locationId }: FullMenuProps) {
 
       {/* Menu Categories */}
       <div className="space-y-14">
-        {categories.map((category) => (
-          <MenuSection key={category.id} category={category} />
-        ))}
+        {categories.map((category) =>
+          category.id === 'peri-mozz-planks' ? (
+            <MozzPlanks key={category.id} />
+          ) : (
+            <MenuSection key={category.id} category={category} />
+          )
+        )}
       </div>
 
       <p className="label mt-10 text-center" style={{ color: 'var(--color-smoke-light)', fontSize: '10px' }}>

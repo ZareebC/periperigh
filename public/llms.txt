@@ -55,13 +55,13 @@ Peri peri cooking originated in Southeast Africa when Portuguese settlers combin
 - Biscoff Milkshake: $11.99
 - Nutella Milkshake: $11.99
 
-## Heat Levels (Peri Scale)
-1. Plain-ish — no spice, all flavor
-2. Lemon & Herb — citrusy, zero heat
-3. Garlic — savory, roasted garlic
-4. Medium — balanced peri peri kick
-5. Hot — serious African Bird's Eye heat
-6. Very Hot — intense fire
+## Heat Levels (Peri Scale, mild to spicy)
+1. Lemon & Herb — citrusy, zero heat
+2. Mango Passion — sweet tropical, no heat
+3. Garlic & Herb — savory roasted garlic
+4. Jerk BBQ — smoky Caribbean with mild warmth
+5. Mild — balanced peri peri kick
+6. Hot — serious African Bird's Eye heat
 7. Extra Hot — maximum heat for spice warriors
 
 ## Key Facts

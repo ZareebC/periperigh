@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { buildMetadata } from '@/lib/metadata';
 import { breadcrumbConfig } from '@/data/navigation';
 import { heatLevels } from '@/data/menu';
@@ -65,6 +66,17 @@ export default function AboutChickenPage() {
                 trade routes, and it eventually became one of the world&apos;s great culinary exports.
               </p>
             </div>
+          </div>
+
+          {/* Full-width food image */}
+          <div className="my-14 relative rounded-sm overflow-hidden aspect-[21/9]">
+            <Image
+              src="/images/hero-chicken-flame-grilled.jpg"
+              alt="Flame-grilled peri peri chicken with fresh peppers on a wooden board"
+              fill
+              className="object-cover"
+              sizes="(max-width: 800px) 100vw, 800px"
+            />
           </div>
 
           {/* Origin story placeholder */}

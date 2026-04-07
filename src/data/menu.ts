@@ -17,14 +17,27 @@ export interface MenuCategory {
 }
 
 export const heatLevels = [
-  { name: 'Plain-ish', description: 'No spice, all flavor — perfect for those who love the taste of flame-grilled chicken without the heat.' },
   { name: 'Lemon & Herb', description: 'Bright citrus and herby notes with zero heat. Fresh, zesty, and family-friendly.' },
-  { name: 'Garlic', description: 'Rich, roasted garlic basting with savory depth and no spice.' },
-  { name: 'Medium', description: 'A balanced blend of peri peri spice — flavorful with a gentle kick.' },
+  { name: 'Mango Passion', description: 'Sweet and tangy mango with a tropical twist — fruity flavor with no heat.' },
+  { name: 'Garlic & Herb', description: 'Rich, roasted garlic with aromatic herbs. Savory depth, no spice.' },
+  { name: 'Jerk BBQ', description: 'Smoky Caribbean-style jerk seasoning blended with BBQ sweetness. A bold flavor with mild warmth.' },
+  { name: 'Mild', description: 'A smooth, balanced blend of peri peri spice — flavorful with a gentle kick.' },
   { name: 'Hot', description: 'Serious heat from African Bird\'s Eye chili — bold, fiery, and not for the faint-hearted.' },
-  { name: 'Very Hot', description: 'Intense peri peri fire. You\'ve been warned.' },
   { name: 'Extra Hot', description: 'Our most extreme heat level. Pure African Bird\'s Eye chili dominance for true spice warriors.' },
 ];
+
+export const mozzPlanks = {
+  sizes: [
+    { pieces: 3, price: 8.99 },
+    { pieces: 5, price: 14.99 },
+    { pieces: 10, price: 28.99 },
+  ],
+  flavors: [
+    { name: 'Plain', description: 'Classic crispy mozzarella — pure cheese pull.' },
+    { name: 'Nashville Hot', description: 'Spicy Oil Drip — fiery kick with every bite.' },
+    { name: 'Mesquite BBQ', description: 'Smokey Oil Drip — rich, smoky, and savory.' },
+  ],
+};
 
 export const menuCategories: MenuCategory[] = [
   {
@@ -83,6 +96,28 @@ export const menuCategories: MenuCategory[] = [
         description:
           'Crispy golden chicken tenders — juicy on the inside, crackling on the outside — drenched in mild or hot peri-peri sauce.',
         price: 11.99,
+        locations: ['bethpage'],
+      },
+      {
+        name: 'Lamb Chops',
+        description:
+          'Flame-grilled halal lamb chops marinated in our peri peri spice blend, seared to perfection.',
+        price: 'Market Price',
+        locations: ['brooklyn'],
+      },
+    ],
+  },
+  {
+    id: 'peri-mozz-planks',
+    name: 'Peri Mozz Planks',
+    description:
+      'Crispy mozzarella planks with an insane cheese pull. Perfect for dipping in ranch or hot honey.',
+    items: [
+      {
+        name: 'Peri Mozz Planks',
+        description: 'Crispy mozzarella planks with an insane cheese pull. Available in 3, 5, or 10 pieces.',
+        price: '8.99–28.99',
+        popular: true,
       },
     ],
   },
@@ -150,6 +185,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           'Crispy golden chicken tender wrap. Served with peri peri mayonnaise, lettuce, tomato, and onion.',
         price: 11.99,
+        locations: ['bethpage'],
       },
     ],
   },
@@ -182,17 +218,20 @@ export const menuCategories: MenuCategory[] = [
         name: '4 Pc Chicken Nuggets',
         description: 'Four crispy chicken nuggets, perfect for little ones.',
         price: 4.79,
+        locations: ['bethpage'],
       },
       {
         name: '6 Pc Chicken Nuggets',
         description: 'Six crispy chicken nuggets.',
         price: 5.99,
+        locations: ['bethpage'],
       },
       {
         name: '2 Pc Chicken Tenders',
         description:
           'Crispy golden chicken tenders — juicy on the inside, crackling on the outside.',
         price: 7.29,
+        locations: ['bethpage'],
       },
     ],
   },
@@ -227,12 +266,6 @@ export const menuCategories: MenuCategory[] = [
         description:
           'Basmati rice cooked in a blend of mild peri peri spices with red bell peppers.',
         price: 5.99,
-      },
-      {
-        name: 'Peri Mozzarella Planks',
-        description:
-          'Crispy mozzarella planks with an insane cheese pull. Choose Plain, Nashville Hot, or Mesquite BBQ. Perfect for dipping in ranch or hot honey.',
-        price: 3.59,
       },
       {
         name: 'Corn on the Cob',

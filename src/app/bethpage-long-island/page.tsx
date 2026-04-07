@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { buildMetadata } from '@/lib/metadata';
 import { getLocationBySlug } from '@/data/locations';
 import { breadcrumbConfig } from '@/data/navigation';
@@ -31,38 +32,50 @@ export default function BethpagePage() {
       <MenuSchema location={location} />
       <Breadcrumbs items={breadcrumbConfig['/bethpage-long-island']} />
 
-      {/* Hero */}
+      {/* Hero with image */}
       <section className="section-dark relative overflow-hidden">
-        <div
-          className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full opacity-[0.06] pointer-events-none"
-          style={{ background: 'radial-gradient(circle, var(--color-ember) 0%, transparent 70%)' }}
-        />
         <div
           className="absolute bottom-0 left-0 right-0 h-px"
           style={{ background: 'linear-gradient(90deg, transparent, var(--color-ember), transparent)' }}
         />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-14 md:py-18">
-          <div className="label mb-4" style={{ color: 'var(--color-gold)' }}>
-            Long Island &middot; Bethpage
-          </div>
-          <h1
-            className="font-display font-800 tracking-[-0.03em] leading-[0.95]"
-            style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
-          >
-            Peri Peri Grill House
-            <br />
-            <span style={{ color: 'var(--color-ember)' }}>Bethpage, Long Island</span>
-          </h1>
-          <p className="mt-6 text-lg max-w-2xl" style={{ color: 'var(--color-smoke-light)' }}>
-            {location.neighborhoodDescription}
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a href={`tel:${location.phone.e164}`} className="btn-ember">
-              Call {location.phone.formatted}
-            </a>
-            <Link href="/order-online" className="btn-outline btn-outline-light">
-              Order Online
-            </Link>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-10 items-center">
+            <div>
+              <div className="label mb-4" style={{ color: 'var(--color-gold)' }}>
+                Long Island &middot; Bethpage
+              </div>
+              <h1
+                className="font-display font-800 tracking-[-0.03em] leading-[0.95]"
+                style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
+              >
+                Peri Peri Grill House
+                <br />
+                <span style={{ color: 'var(--color-ember)' }}>Bethpage, Long Island</span>
+              </h1>
+              <p className="mt-5 text-lg max-w-xl" style={{ color: 'var(--color-smoke-light)' }}>
+                {location.neighborhoodDescription}
+              </p>
+              <div className="mt-7 flex flex-wrap gap-4">
+                <a href={`tel:${location.phone.e164}`} className="btn-ember">
+                  Call {location.phone.formatted}
+                </a>
+                <Link href="/order-online" className="btn-outline btn-outline-light">
+                  Order Online
+                </Link>
+              </div>
+            </div>
+            <div className="hidden lg:block relative">
+              <div className="relative rounded-sm overflow-hidden aspect-[3/4]">
+                <Image
+                  src="/images/falafel-wrap-fries.jpg"
+                  alt="Falafel wrap with peri peri fries"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="380px"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
