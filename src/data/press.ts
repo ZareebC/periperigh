@@ -24,6 +24,13 @@ export const pressItems: PressItem[] = [
     tier: 2,
   },
   {
+    publication: 'Eater NY',
+    title: 'Grubhub City Council Hearing NYC',
+    url: 'https://ny.eater.com/2019/6/28/19102410/grubhub-city-council-hearing-nyc',
+    year: 2019,
+    tier: 2,
+  },
+  {
     publication: 'Newsday',
     title: 'Peri Grill House, Bethpage',
     url: 'https://www.newsday.com/lifestyle/restaurants/peri-grill-house-bethpage-h7b5tfcs',
