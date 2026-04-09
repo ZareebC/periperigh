@@ -105,7 +105,7 @@ export default function BethpagePage() {
             Full Menu
           </h2>
           <p className="mb-12" style={{ color: 'var(--color-smoke)' }}>
-            100% halal peri peri chicken, marinated overnight and flame-grilled to order. Prices may vary.
+            100% halal peri peri chicken, marinated overnight and flame-grilled to order. Dine-in and takeout prices — updated April 2026. Delivery prices may vary by platform.
           </p>
           <MenuViewTracker locationId="bethpage">
             <FullMenu locationId="bethpage" />

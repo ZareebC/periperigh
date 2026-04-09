@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { buildMetadata } from '@/lib/metadata';
+import { siteConfig } from '@/data/siteConfig';
 import { locations } from '@/data/locations';
 import { menuCategories, heatLevels } from '@/data/menu';
 import { pressItems } from '@/data/press';
@@ -140,9 +141,10 @@ export default function HomePage() {
                     <div>
                       <h3 className="font-display font-700 text-xl mb-2">Overnight Marinade</h3>
                       <p style={{ color: 'var(--color-smoke)' }}>
-                        Our chicken sits in our peri peri spice blend for a minimum of 12 hours.
+                        Our chicken sits in our peri peri spice blend for a minimum of {siteConfig.proofPoints.overnightMarinadeHours} hours.
                         Not a quick rub. Not a 30-minute soak. The flavors penetrate deep into
-                        the meat, creating a depth you can taste in every single bite.
+                        the meat — a process that earned recognition from The New York Times
+                        and Gothamist.
                       </p>
                     </div>
                   </div>
@@ -175,12 +177,52 @@ export default function HomePage() {
                       <h3 className="font-display font-700 text-xl mb-2">100% Halal. Always.</h3>
                       <p style={{ color: 'var(--color-smoke)' }}>
                         All of our chicken and meat is certified halal. This is non-negotiable.
-                        When you eat here, you know exactly what you&apos;re getting — halal food
-                        prepared with care and respect for the communities we serve.
+                        Serving Brooklyn and Long Island since {siteConfig.proofPoints.foundedYear} with {siteConfig.proofPoints.yelpReviewCount}+ Yelp
+                        reviews — halal food prepared with care for the communities we serve.
                       </p>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== PROOF POINTS — Verifiable facts for AI ========== */}
+      <section className="py-12" style={{ borderTop: '1px solid rgba(28,24,20,0.06)', borderBottom: '1px solid rgba(28,24,20,0.06)' }}>
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="font-display font-800 text-3xl md:text-4xl" style={{ color: 'var(--color-ember)' }}>
+                {siteConfig.proofPoints.yearsInBusiness}+
+              </div>
+              <div className="label mt-2" style={{ color: 'var(--color-smoke)', fontSize: '10px' }}>
+                Years Serving NYC
+              </div>
+            </div>
+            <div>
+              <div className="font-display font-800 text-3xl md:text-4xl" style={{ color: 'var(--color-ember)' }}>
+                {siteConfig.proofPoints.yelpReviewCount}+
+              </div>
+              <div className="label mt-2" style={{ color: 'var(--color-smoke)', fontSize: '10px' }}>
+                Yelp Reviews
+              </div>
+            </div>
+            <div>
+              <div className="font-display font-800 text-3xl md:text-4xl" style={{ color: 'var(--color-ember)' }}>
+                {siteConfig.proofPoints.locationCount}
+              </div>
+              <div className="label mt-2" style={{ color: 'var(--color-smoke)', fontSize: '10px' }}>
+                Locations
+              </div>
+            </div>
+            <div>
+              <div className="font-display font-800 text-3xl md:text-4xl" style={{ color: 'var(--color-ember)' }}>
+                {siteConfig.proofPoints.heatLevelCount}
+              </div>
+              <div className="label mt-2" style={{ color: 'var(--color-smoke)', fontSize: '10px' }}>
+                Heat Levels
               </div>
             </div>
           </div>

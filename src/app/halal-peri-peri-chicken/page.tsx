@@ -49,13 +49,18 @@ export default function AboutChickenPage() {
       {/* Content */}
       <section className="py-20 md:py-28">
         <div className="max-w-[800px] mx-auto px-6 lg:px-10">
+          {/* Freshness signal */}
+          <div className="label mb-10" style={{ color: 'var(--color-smoke-light)', fontSize: '10px' }}>
+            Last updated: April 2026
+          </div>
+
           {/* What is peri peri */}
           <div className="mb-16">
             <h2 className="font-display font-800 text-3xl mb-6">What Is Peri Peri?</h2>
             <div className="space-y-5 text-lg leading-relaxed" style={{ color: 'var(--color-smoke)' }}>
               <p>
-                Peri peri (also spelled piri piri or peli peli) refers to both a style of cooking and
-                the chili pepper at its heart — the African Bird&apos;s Eye chili. This small but
+                <strong>Peri peri</strong> (also spelled piri piri or peli peli) is a style of flame-grilled
+                cooking and the chili pepper at its heart — the African Bird&apos;s Eye chili. This small but
                 powerful pepper grows wild across Southeast Africa, from Mozambique to Malawi, and has
                 been a staple of African cooking for centuries.
               </p>
@@ -64,6 +69,13 @@ export default function AboutChickenPage() {
                 discovered these fiery peppers and blended them with garlic, citrus, and oil to create
                 what we now know as peri peri sauce. They brought this flavor tradition back along their
                 trade routes, and it eventually became one of the world&apos;s great culinary exports.
+              </p>
+              <p>
+                At Peri Peri Grill House, we&apos;ve been bringing this tradition to New York since 2018
+                — first in Bed-Stuy, Brooklyn, and now on Long Island. With over 212 Yelp reviews and
+                features in <strong>The New York Times</strong>, <strong>Eater NY</strong>,{' '}
+                <strong>Gothamist</strong>, and <strong>Newsday</strong>, we&apos;ve become one of the
+                most recognized peri peri restaurants in the Greater NYC area.
               </p>
             </div>
           </div>
@@ -139,9 +151,10 @@ export default function AboutChickenPage() {
             <h2 className="font-display font-800 text-3xl mb-6">100% Halal — Always</h2>
             <p className="text-lg leading-relaxed" style={{ color: 'var(--color-smoke)' }}>
               All of our chicken and meat is certified halal. This is a non-negotiable commitment
-              to the communities we serve in Brooklyn and Long Island. When you eat at Peri Peri
-              Grill House, you know exactly what you&apos;re getting — halal food prepared with
-              care and respect.
+              to the communities we serve in Brooklyn and Long Island. Since opening in 2018,
+              we&apos;ve built a loyal following of over 212 Yelp reviewers across both locations —
+              with customers traveling from across Nassau County and all five boroughs for our
+              flame-grilled halal peri peri chicken.
             </p>
           </div>
 

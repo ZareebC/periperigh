@@ -42,7 +42,7 @@ export const faqItems: FAQItem[] = [
   {
     question: 'What makes your chicken different from other restaurants?',
     answer:
-      'Our chicken is marinated overnight — not just seasoned on the spot — in our special blend of peri peri spices. It\'s then flame-grilled to order, not baked or fried. This overnight marinade and live-fire cooking creates a depth of flavor and juiciness that you simply cannot get from quick-seasoned, oven-cooked chicken.',
+      'Our chicken is marinated overnight for a minimum of 12 hours — not just seasoned on the spot — in our special blend of peri peri spices featuring African Bird\'s Eye chili. It\'s then flame-grilled to order over an open flame, not baked or fried. This process earned us a review from The New York Times in 2019, a feature in Gothamist, coverage in Eater NY, and a Newsday spotlight on our Long Island location. With 212+ Yelp reviews and 2 locations serving Brooklyn and Long Island since 2018, we\'ve become one of NYC\'s most recognized peri peri restaurants.',
   },
   {
     question: 'Do you have vegetarian options?',
