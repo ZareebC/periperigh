@@ -32,7 +32,7 @@ export const faqItems: FAQItem[] = [
   {
     question: 'Do you cater events?',
     answer:
-      'Yes, we offer catering for events of all sizes. Our family meals and whole chicken platters are perfect for gatherings. Contact us at help@periperigh.com or call either location to discuss your catering needs.',
+      'Yes, we offer catering for events of all sizes. Our family meals and whole chicken platters are perfect for gatherings. Contact us at Periperigh.li@gmail.com or call either location to discuss your catering needs.',
   },
   {
     question: 'What are your hours?',

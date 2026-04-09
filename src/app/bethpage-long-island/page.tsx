@@ -9,6 +9,7 @@ import MenuSchema from '@/components/seo/MenuSchema';
 import LocationCard from '@/components/location/LocationCard';
 import GoogleMap from '@/components/location/GoogleMap';
 import FullMenu from '@/components/menu/FullMenu';
+import MenuViewTracker from '@/components/analytics/MenuViewTracker';
 import Link from 'next/link';
 
 const location = getLocationBySlug('bethpage-long-island')!;
@@ -106,7 +107,9 @@ export default function BethpagePage() {
           <p className="mb-12" style={{ color: 'var(--color-smoke)' }}>
             100% halal peri peri chicken, marinated overnight and flame-grilled to order. Prices may vary.
           </p>
-          <FullMenu locationId="bethpage" />
+          <MenuViewTracker locationId="bethpage">
+            <FullMenu locationId="bethpage" />
+          </MenuViewTracker>
         </div>
       </section>
 

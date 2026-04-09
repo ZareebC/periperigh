@@ -29,6 +29,10 @@ export function trackContactFormSubmit() {
   trackEvent('contact_form_submit');
 }
 
+export function trackDirectionsClick(location: string) {
+  trackEvent('directions_click', { location });
+}
+
 export function trackAIReferral(source: string) {
   trackEvent('ai_referral', { ai_source: source });
 }

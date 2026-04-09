@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Location } from '@/data/locations';
 import HoursTable from './HoursTable';
+import { TrackedPhone, TrackedDirectionsLink } from '@/components/analytics/TrackedLink';
 
 interface LocationCardProps {
   location: Location;
@@ -26,13 +27,14 @@ export default function LocationCard({ location, showHours = true, showMap = fal
         <p>{location.address.street}</p>
         <p>{location.address.city}, {location.address.state} {location.address.zip}</p>
         <p className="pt-1">
-          <a
-            href={`tel:${location.phone.e164}`}
+          <TrackedPhone
+            phone={location.phone.e164}
+            locationId={location.id}
             className="font-display font-600 transition-colors"
             style={{ color: 'var(--color-ember)' }}
           >
             {location.phone.formatted}
-          </a>
+          </TrackedPhone>
         </p>
       </address>
 
@@ -57,14 +59,13 @@ export default function LocationCard({ location, showHours = true, showMap = fal
         <Link href={`/${location.slug}`} className="btn-ember !py-2.5 !px-5 !text-sm">
           View Menu
         </Link>
-        <a
+        <TrackedDirectionsLink
           href={location.googleMapsLink}
-          target="_blank"
-          rel="noopener noreferrer"
+          locationId={location.id}
           className="btn-outline !py-2.5 !px-5 !text-sm"
         >
           Directions
-        </a>
+        </TrackedDirectionsLink>
       </div>
     </div>
   );
