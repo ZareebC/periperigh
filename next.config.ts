@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
+import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
+  pageExtensions: ["ts", "tsx", "mdx"],
+
   // Redirect old GoDaddy paths if they ever change
   async redirects() {
     return [
@@ -42,4 +45,6 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+const withMDX = createMDX({});
+
+export default withMDX(nextConfig);

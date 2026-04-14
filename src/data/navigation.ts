@@ -17,6 +17,7 @@ export const mainNav: NavItem[] = [
   { label: 'Our Chicken', href: '/halal-peri-peri-chicken' },
   { label: 'Locations', href: '/locations' },
   { label: 'FAQ', href: '/faq' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
 ];
 
