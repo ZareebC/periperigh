@@ -22,17 +22,20 @@ export function buildMetadata({
   geo,
 }: BuildMetadataOptions): Metadata {
   const url = `${siteConfig.domain}${path}`;
-  const fullTitle =
-    path === '/' ? `${siteConfig.name} | ${siteConfig.tagline}` : `${title} | ${siteConfig.name}`;
+  // Title branding is handled by layout.tsx template (`%s | Brand`).
+  // Pages only pass the page-specific part; the homepage uses the default title from layout.
+  const pageTitle = path === '/' ? `${siteConfig.name} | ${siteConfig.tagline}` : title;
+  // OG/Twitter don't go through layout template, so they need the full branded title
+  const ogTitle = path === '/' ? `${siteConfig.name} | ${siteConfig.tagline}` : `${title} | ${siteConfig.name}`;
 
   const metadata: Metadata = {
-    title: fullTitle,
+    title: pageTitle,
     description,
     alternates: {
       canonical: url,
     },
     openGraph: {
-      title: fullTitle,
+      title: ogTitle,
       description,
       url,
       siteName: siteConfig.name,
@@ -42,7 +45,7 @@ export function buildMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title: fullTitle,
+      title: ogTitle,
       description,
     },
     other: {},

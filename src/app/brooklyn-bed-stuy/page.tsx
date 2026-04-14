@@ -15,7 +15,7 @@ import Link from 'next/link';
 const location = getLocationBySlug('brooklyn-bed-stuy')!;
 
 export const metadata = buildMetadata({
-  title: 'Peri Peri Grill House — Bed-Stuy, Brooklyn | Menu & Hours',
+  title: 'Bed-Stuy, Brooklyn — Menu & Hours',
   description: location.metaDescription,
   path: '/brooklyn-bed-stuy',
   geo: {

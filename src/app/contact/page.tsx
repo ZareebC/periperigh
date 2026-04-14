@@ -7,7 +7,7 @@ import LocationCard from '@/components/location/LocationCard';
 import ContactForm from '@/components/contact/ContactForm';
 
 export const metadata = buildMetadata({
-  title: 'Contact Peri Peri Grill House',
+  title: 'Contact Us — Brooklyn & Long Island',
   description:
     'Get in touch with Peri Peri Grill House. Catering inquiries, questions, or feedback — reach us at help@periperigh.com or call our Brooklyn or Long Island location.',
   path: '/contact',

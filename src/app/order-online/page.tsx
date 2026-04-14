@@ -6,7 +6,7 @@ import { TrackedPhone, TrackedOrderLink } from '@/components/analytics/TrackedLi
 import Link from 'next/link';
 
 export const metadata = buildMetadata({
-  title: 'Order Peri Peri Grill House Online — Delivery & Pickup',
+  title: 'Order Online — Delivery & Pickup',
   description:
     'Order halal peri peri chicken online from Peri Peri Grill House. Delivery and pickup available in Brooklyn and Bethpage, Long Island via UberEats, DoorDash, and more.',
   path: '/order-online',

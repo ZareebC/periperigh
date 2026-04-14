@@ -23,13 +23,8 @@ export const pressItems: PressItem[] = [
     year: 2024,
     tier: 2,
   },
-  {
-    publication: 'Eater NY',
-    title: 'Grubhub City Council Hearing NYC',
-    url: 'https://ny.eater.com/2019/6/28/19102410/grubhub-city-council-hearing-nyc',
-    year: 2019,
-    tier: 2,
-  },
+  // Eater NY link removed — article was about Grubhub hearings, not a feature on Peri Peri Grill House.
+  // Replace with an actual Eater NY feature if one exists.
   {
     publication: 'Newsday',
     title: 'Peri Grill House, Bethpage',

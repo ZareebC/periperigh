@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { siteConfig } from '@/data/siteConfig';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -30,6 +31,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://periperigh.com/sitemap.xml',
+    sitemap: `${siteConfig.domain}/sitemap.xml`,
   };
 }

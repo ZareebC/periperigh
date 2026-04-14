@@ -15,7 +15,7 @@ import Link from 'next/link';
 const location = getLocationBySlug('bethpage-long-island')!;
 
 export const metadata = buildMetadata({
-  title: 'Peri Peri Grill House — Bethpage, Long Island | Menu & Hours',
+  title: 'Bethpage, Long Island — Menu & Hours',
   description: location.metaDescription,
   path: '/bethpage-long-island',
   geo: {

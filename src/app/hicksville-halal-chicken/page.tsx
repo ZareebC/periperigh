@@ -10,7 +10,7 @@ import LocationCard from '@/components/location/LocationCard';
 const bethpage = getLocationBySlug('bethpage-long-island')!;
 
 export const metadata = buildMetadata({
-  title: 'Halal Chicken Near Hicksville, NY — Peri Peri Grill House',
+  title: 'Halal Chicken Near Hicksville, NY',
   description:
     'Looking for halal peri peri chicken near Hicksville, NY? Peri Peri Grill House in Bethpage is just minutes away. Flame-grilled, marinated overnight, 100% halal.',
   path: '/hicksville-halal-chicken',

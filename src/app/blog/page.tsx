@@ -4,7 +4,7 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import Link from 'next/link';
 
 export const metadata = buildMetadata({
-  title: 'Blog — Peri Peri Grill House',
+  title: 'Blog — Peri Peri Stories & Recipes',
   description:
     'Stories, recipes, and news from Peri Peri Grill House. Learn about peri peri chicken, our cooking process, and what makes halal flame-grilled chicken different.',
   path: '/blog',

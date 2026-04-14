@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: 'Peri Peri Grill House',
-  domain: 'https://periperigh.com',
+  domain: 'https://www.periperigh.com',
   tagline: 'Flame-Grilled Halal Peri Peri Chicken',
   description:
     'Halal peri peri chicken in Brooklyn and Bethpage, Long Island. Marinated overnight, flame-grilled to order with bold peri peri sauces. Dine in, takeout, or delivery.',

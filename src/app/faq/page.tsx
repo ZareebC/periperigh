@@ -6,7 +6,7 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import FAQSchema from '@/components/seo/FAQSchema';
 
 export const metadata = buildMetadata({
-  title: 'Frequently Asked Questions — Peri Peri Grill House',
+  title: 'Frequently Asked Questions',
   description:
     'Answers to common questions about Peri Peri Grill House: halal certification, locations, delivery, spice levels, catering, hours, and more.',
   path: '/faq',

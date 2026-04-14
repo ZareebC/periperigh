@@ -1,7 +1,8 @@
 import type { MetadataRoute } from 'next';
+import { siteConfig } from '@/data/siteConfig';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://periperigh.com';
+  const baseUrl = siteConfig.domain;
 
   return [
     {
