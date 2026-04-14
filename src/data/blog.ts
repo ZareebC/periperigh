@@ -77,7 +77,7 @@ export const blogPosts: BlogPostMeta[] = [
     slug: 'what-is-peri-peri-chicken',
     title: 'What Is Peri Peri Chicken? The Complete Guide',
     description:
-      'Peri peri chicken is a flame-grilled style originating from Southeast Africa using African Bird\'s Eye chili. Learn the history, how it\'s made, and where to try it in NYC.',
+      'What is peri peri chicken? A halal flame-grilled chicken marinated overnight in African Bird\'s Eye chili. Learn the history, heat levels, and where to find it in Brooklyn and Long Island.',
     clusterId: 'peri-peri-chicken',
     publishedAt: '2026-04-15',
     updatedAt: '2026-04-15',
@@ -86,7 +86,7 @@ export const blogPosts: BlogPostMeta[] = [
       src: '/images/hero-chicken-flame-grilled.jpg',
       alt: 'Flame-grilled peri peri chicken with African Bird\'s Eye chili peppers',
     },
-    tags: ['peri peri', 'halal', 'chicken', 'african cuisine'],
+    tags: ['peri peri', 'halal', 'chicken', 'african cuisine', 'brooklyn', 'long island', 'nandos alternative'],
     relatedSlugs: [],
     siteLinks: ['/halal-peri-peri-chicken', '/brooklyn-bed-stuy', '/faq'],
     readingTimeMinutes: 6,
