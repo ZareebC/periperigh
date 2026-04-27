@@ -87,9 +87,27 @@ export const blogPosts: BlogPostMeta[] = [
       alt: 'Flame-grilled peri peri chicken with African Bird\'s Eye chili peppers',
     },
     tags: ['peri peri', 'halal', 'chicken', 'african cuisine', 'brooklyn', 'long island', 'nandos alternative'],
-    relatedSlugs: [],
+    relatedSlugs: ['nandos-alternative-nyc'],
     siteLinks: ['/halal-peri-peri-chicken', '/brooklyn-bed-stuy', '/faq'],
     readingTimeMinutes: 6,
+  },
+  {
+    slug: 'nandos-alternative-nyc',
+    title: 'Looking for a Nando\'s in NYC? Where to Get Peri Peri Chicken Instead',
+    description:
+      'There\'s no Nando\'s in NYC. The closest are in DC and Chicago. Here\'s where to get halal peri peri chicken in Brooklyn and Long Island, with a Nando\'s comparison and ordering guide.',
+    clusterId: 'peri-peri-chicken',
+    publishedAt: '2026-04-22',
+    updatedAt: '2026-04-22',
+    author: { name: 'Peri Peri Grill House', role: 'Team' },
+    featuredImage: {
+      src: '/images/hero-chicken-flame-grilled.jpg',
+      alt: 'Halal peri peri chicken in Brooklyn, the closest alternative to Nando\'s in NYC',
+    },
+    tags: ['nandos', 'nandos alternative', 'peri peri', 'halal', 'brooklyn', 'long island', 'nyc'],
+    relatedSlugs: ['what-is-peri-peri-chicken'],
+    siteLinks: ['/halal-peri-peri-chicken', '/brooklyn-bed-stuy', '/bethpage-long-island', '/order-online'],
+    readingTimeMinutes: 5,
   },
 ];
 

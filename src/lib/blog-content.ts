@@ -11,6 +11,8 @@ type MDXModule = { default: ComponentType };
 const mdxModules: Record<string, () => Promise<MDXModule>> = {
   'what-is-peri-peri-chicken': () =>
     import('@/content/blog/what-is-peri-peri-chicken.mdx') as Promise<MDXModule>,
+  'nandos-alternative-nyc': () =>
+    import('@/content/blog/nandos-alternative-nyc.mdx') as Promise<MDXModule>,
 };
 
 export async function getBlogContent(slug: string): Promise<ComponentType | null> {
