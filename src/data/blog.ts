@@ -87,7 +87,7 @@ export const blogPosts: BlogPostMeta[] = [
       alt: 'Flame-grilled peri peri chicken with African Bird\'s Eye chili peppers',
     },
     tags: ['peri peri', 'halal', 'chicken', 'african cuisine', 'brooklyn', 'long island', 'nandos alternative'],
-    relatedSlugs: ['nandos-alternative-nyc'],
+    relatedSlugs: ['nandos-alternative-nyc', 'is-peri-peri-chicken-halal'],
     siteLinks: ['/halal-peri-peri-chicken', '/brooklyn-bed-stuy', '/faq'],
     readingTimeMinutes: 6,
   },
@@ -105,9 +105,27 @@ export const blogPosts: BlogPostMeta[] = [
       alt: 'Halal peri peri chicken in Brooklyn, the closest alternative to Nando\'s in NYC',
     },
     tags: ['nandos', 'nandos alternative', 'peri peri', 'halal', 'brooklyn', 'long island', 'nyc'],
-    relatedSlugs: ['what-is-peri-peri-chicken'],
+    relatedSlugs: ['what-is-peri-peri-chicken', 'is-peri-peri-chicken-halal'],
     siteLinks: ['/halal-peri-peri-chicken', '/brooklyn-bed-stuy', '/bethpage-long-island', '/order-online'],
     readingTimeMinutes: 5,
+  },
+  {
+    slug: 'is-peri-peri-chicken-halal',
+    title: 'Is Peri Peri Chicken Halal? A Straight Answer',
+    description:
+      'Is peri peri chicken halal? It depends on the restaurant. Here\'s what halal means, how to verify a peri peri restaurant\'s certification, and where to find halal peri peri chicken in NYC and Long Island.',
+    clusterId: 'peri-peri-chicken',
+    publishedAt: '2026-04-29',
+    updatedAt: '2026-04-29',
+    author: { name: 'Peri Peri Grill House', role: 'Team' },
+    featuredImage: {
+      src: '/images/hero-chicken-flame-grilled.jpg',
+      alt: 'Halal certified peri peri chicken at Peri Peri Grill House Brooklyn and Bethpage',
+    },
+    tags: ['halal', 'peri peri', 'zabiha', 'halal certification', 'brooklyn', 'long island', 'nyc'],
+    relatedSlugs: ['what-is-peri-peri-chicken', 'nandos-alternative-nyc'],
+    siteLinks: ['/halal-peri-peri-chicken', '/brooklyn-bed-stuy', '/bethpage-long-island', '/faq', '/order-online'],
+    readingTimeMinutes: 6,
   },
 ];
 
